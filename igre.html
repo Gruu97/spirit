@@ -8,105 +8,74 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">Spirit Kafebar</a>
+            <button class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
             <ul class="nav-links">
-                <li><a href="pivo.html">Pivo & Kraft</a></li>
-                <li><a href="kafa.html">Kafa & Napici</a></li>
-                <li><a href="igre.html" style="color:var(--accent-color)">Društvene Igre</a></li>
+                <li><a href="meni.html" class="btn-menu-link">📜 Meni</a></li>
+                <li><a href="pivo.html">Pivo</a></li>
+                <li><a href="kafa.html">Kafa</a></li>
+                <li><a href="igre.html" style="color:var(--accent-color)">Igre</a></li>
                 <li><a href="#kontakt" class="nav-cta">Rezerviši</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="page-header" style="background-image: url('https://images.unsplash.com/photo-1610890716271-e2fe045a2302?q=80&w=1920&auto=format&fit=crop'); background-size: cover; background-position: center; position: relative;">
-        <div class="overlay"></div> <div class="container" style="position: relative; z-index: 2;">
+    <header class="page-header" style="background-image: url('https://images.unsplash.com/photo-1610890716271-e2fe045a2302?q=80&w=1920&auto=format&fit=crop');">
+        <div class="overlay"></div>
+        <div class="container hero-content hidden">
             <h1>Ko gubi - časti turu!</h1>
-            <p style="color: #F5F5E9; font-size: 1.2rem; margin-top: 10px;">Od strateškog nadmudrivanja do totalnog haosa.</p>
+            <p>Od strategija do totalnog haosa.</p>
         </div>
     </header>
 
-    <section class="games-section">
+    <section class="features">
         <div class="container">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">Naši Favoriti</h2>
-            
+            <h2 class="section-title hidden">Najpopularnije</h2>
             <div class="games-grid">
-                
-                <div class="game-card">
-                    <img src="https://images.unsplash.com/photo-1611996575749-79a3a250f968?q=80&w=600&auto=format&fit=crop" alt="Catan tabla" class="game-img">
-                    <div class="game-info">
+                <div class="card hidden">
+                    <img src="https://images.unsplash.com/photo-1611996575749-79a3a250f968?q=80&w=600&auto=format&fit=crop" class="card-img" alt="Catan">
+                    <div class="card-content">
                         <h3>Catan</h3>
-                        <p class="game-type">Strategija | 3-4 Igrača</p>
-                        <p class="game-desc">Klasik koji je promenio svet igara. Sakupljaj resurse, gradi puteve i pazi se lopova! "Menjam drvo za ovcu" je rečenica koja ovde razara prijateljstva.</p>
+                        <span class="game-type">Strategija | 3-4 Igrača</span>
+                        <p>Trguj resursima, gradi puteve. "Menjam ovcu za drvo" je klasik.</p>
                     </div>
                 </div>
-
-                <div class="game-card">
-                    <img src="https://plus.unsplash.com/premium_photo-1675803273898-386053325c34?q=80&w=600&auto=format&fit=crop" alt="Exploding Kittens karte" class="game-img">
-                    <div class="game-info">
+                <div class="card hidden">
+                    <img src="https://plus.unsplash.com/premium_photo-1675803273898-386053325c34?q=80&w=600&auto=format&fit=crop" class="card-img" alt="Kittens">
+                    <div class="card-content">
                         <h3>Exploding Kittens</h3>
-                        <p class="game-type">Party | 2-5 Igrača</p>
-                        <p class="game-desc">Ruski rulet, ali sa mačkama. Visoko-energetska igra gde pokušavaš da ne eksplodiraš koristeći lasere, sendviče od mačje trave i demontiranje.</p>
+                        <span class="game-type">Party | 2-5 Igrača</span>
+                        <p>Ruski rulet sa mačkama. Brza, napeta i urnebesna igra.</p>
                     </div>
                 </div>
-
-                <div class="game-card">
-                    <img src="https://images.unsplash.com/photo-1609204278129-a9a7b7880f74?q=80&w=600&auto=format&fit=crop" alt="Unstable Unicorns" class="game-img">
-                    <div class="game-info">
+                <div class="card hidden">
+                    <img src="https://images.unsplash.com/photo-1609204278129-a9a7b7880f74?q=80&w=600&auto=format&fit=crop" class="card-img" alt="Unicorns">
+                    <div class="card-content">
                         <h3>Unstable Unicorns</h3>
-                        <p class="game-type">Strategija/Party | 2-8 Igrača</p>
-                        <p class="game-desc">Izgradi armiju jednoroga. Izdaj prijatelje. Jednorozi su sada tvoji prijatelji. Strateška igra koja uništava prijateljstva... na najslađi mogući način.</p>
+                        <span class="game-type">Strategija</span>
+                        <p>Izgradi armiju jednoroga i izdaj prijatelje. Slatko ali opasno.</p>
                     </div>
                 </div>
-
             </div>
-        </div>
-    </section>
-
-    <section class="other-games">
-        <div class="container">
-            <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">I još mnogo toga na polici...</h3>
-            <div class="games-list-grid">
-                <ul class="game-list">
-                    <li>🎲 <strong>Wingspan</strong> (Prelepa igra o pticama)</li>
-                    <li>🚂 <strong>Ticket to Ride</strong> (Gradimo pruge)</li>
-                    <li>🕵️ <strong>Codenames</strong> (Asocijacije za ekipe)</li>
-                    <li>🏰 <strong>Carcassonne</strong> (Gradimo tvrđave)</li>
-                </ul>
-                <ul class="game-list">
-                    <li>🐰 <strong>Dixit</strong> (Igra mašte i slika)</li>
-                    <li>💎 <strong>Splendor</strong> (Trgovina draguljima)</li>
-                    <li>🌍 <strong>7 Wonders</strong> (Izgradi civilizaciju)</li>
-                    <li>🃏 <strong>Uno & Karte</strong> (Klasici)</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="fun-facts">
-        <div class="container">
-            <h2 class="section-title">Da li ste znali?</h2>
             
-            <div class="fact-box">
-                <h3>💣 Rekorderi Kickstartera</h3>
-                <p>Igra <strong>Exploding Kittens</strong> je ušla u istoriju kao projekat sa najviše podržavalaca na Kickstarteru ikada! Preko 219.000 ljudi je dalo novac da ova "blesava" ideja postane stvarnost. To je dokaz da svi volimo malo haosa.</p>
-            </div>
-
-            <div class="fact-box">
-                <h3>🦄 Slatko, ali opasno</h3>
-                <p><strong>Unstable Unicorns</strong> je jedna od najprodavanijih igara u Spiritu. Iako deluje kao igra za decu zbog crteža, nivo strategije i "zabijanja noža u leđa" je ravan Igri Prestola. Savet: Ne verujte nikome ko drži kartu "Neigh".</p>
-            </div>
-
-            <div class="fact-box">
-                <h3>🧠 Gimnastika za mozak</h3>
-                <p>Igranje društvenih igara dokazano smanjuje stres i podstiče lučenje endorfina (hormona sreće). Kombinacija smeha sa prijateljima, rešavanja problema u igri i dobrog piva je bukvalno recept za mentalno zdravlje.</p>
+            <div style="text-align:center; margin-top:4rem;">
+                <h3>I još mnogo toga:</h3>
+                <p>Wingspan, Ticket to Ride, Dixit, Codenames, Carcassonne...</p>
             </div>
         </div>
     </section>
 
     <footer id="kontakt">
+        <div class="container footer-content">
+             <div class="footer-col"><h4>Spirit Kafebar</h4><p>Komšijski kutak.</p></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2025 Spirit Kafebar.</p></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
         <div class="container footer-content">
             <div class="footer-col">
                 <h4>Spirit Kafebar</h4>
