@@ -6,107 +6,59 @@
     <title>Cenovnik | Spirit Kafebar</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <style>
-        /* Specifični stilovi samo za meni stranicu da bude kao papirni meni */
-        .menu-wrapper { max-width: 800px; margin: 4rem auto; background: #fff; padding: 3rem; box-shadow: 0 0 20px rgba(0,0,0,0.1); border-radius: 8px; }
-        .menu-header-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: var(--primary-color); border-bottom: 2px solid var(--accent-color); padding-bottom: 1rem; }
-        .menu-category-title { color: var(--accent-color); text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #eee; margin-top: 3rem; margin-bottom: 1.5rem; padding-bottom: 0.5rem; }
-        .menu-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.8rem; }
-        .menu-name { font-weight: 600; color: #333; }
-        .menu-desc { display: block; font-size: 0.85rem; color: #777; font-style: italic; margin-top: 2px; }
-        .menu-price { font-weight: bold; color: var(--primary-color); white-space: nowrap; margin-left: 1rem; }
-        .dots { flex-grow: 1; border-bottom: 1px dotted #ccc; margin: 0 10px; opacity: 0.5; position: relative; top: -5px; }
-    </style>
 </head>
 <body>
-
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">Spirit Kafebar</a>
+            <button class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
             <ul class="nav-links">
-                <li><a href="meni.html" style="color:var(--accent-color)">📜 Kompletan Meni</a></li>
+                <li><a href="meni.html" style="color:var(--accent-color)">📜 Meni</a></li>
                 <li><a href="pivo.html">Pivo</a></li>
                 <li><a href="kafa.html">Kafa</a></li>
                 <li><a href="igre.html">Igre</a></li>
+                <li><a href="#kontakt" class="nav-cta">Rezerviši</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="container">
-        <div class="menu-wrapper">
-            <h1 class="menu-header-title">Karta Pića</h1>
+    <header class="page-header" style="height:40vh; background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1920&auto=format&fit=crop');">
+        <div class="overlay"></div>
+        <div class="container hero-content hidden">
+            <h1>Naša Ponuda</h1>
+        </div>
+    </header>
 
-            <h3 class="menu-category-title">☕ Topli Napici</h3>
+    <div class="container">
+        <div class="menu-wrapper hidden">
+            <h3 class="menu-category-title">☕ Kafa</h3>
             <div class="menu-row"><span class="menu-name">Espresso</span><span class="dots"></span><span class="menu-price">160</span></div>
-            <div class="menu-row"><span class="menu-name">Espresso Doppio</span><span class="dots"></span><span class="menu-price">280</span></div>
             <div class="menu-row"><span class="menu-name">Espresso sa mlekom</span><span class="dots"></span><span class="menu-price">190</span></div>
             <div class="menu-row"><span class="menu-name">Cappuccino</span><span class="dots"></span><span class="menu-price">210</span></div>
-            <div class="menu-row"><span class="menu-name">Cappuccino Freddo</span><span class="dots"></span><span class="menu-price">220</span></div>
-            <div class="menu-row"><span class="menu-name">Latte Macchiato</span><span class="dots"></span><span class="menu-price">220</span></div>
-            <div class="menu-row"><span class="menu-name">Nescaffe</span><span class="dots"></span><span class="menu-price">220</span></div>
             <div class="menu-row"><span class="menu-name">Domaća kafa</span><span class="dots"></span><span class="menu-price">140</span></div>
-            <div class="menu-row"><span class="menu-name">Topla čokolada</span><span class="dots"></span><span class="menu-price">360</span></div>
             
-            <h3 class="menu-category-title">🍵 Čajevi (210 RSD)</h3>
-            <p style="font-size:0.9rem; color:#555; margin-bottom:1rem;">Granny, Little Camel, Detoxicate Me, Dark Madness</p>
-            <div class="menu-row">
-                <div><span class="menu-name">Wild Madness</span><span class="menu-desc">nana, divlja jabuka, kopriva, šipak, hibiskus</span></div>
-            </div>
-            <div class="menu-row">
-                <div><span class="menu-name">Glog It</span><span class="menu-desc">majčina dušica, kantarion, glog, timijan</span></div>
-            </div>
-            <div class="menu-row">
-                <div><span class="menu-name">Zdravko</span><span class="menu-desc">hibiskus, crni slez, neven, kamilica, nana, lipa</span></div>
-            </div>
+            <h3 class="menu-category-title">🍺 Točeno Pivo</h3>
+            <div class="menu-row"><span class="menu-name">Salto Lager</span><span class="dots"></span><span class="menu-price">310</span></div>
+            <div class="menu-row"><span class="menu-name">Salto Stout</span><span class="dots"></span><span class="menu-price">390</span></div>
+            <div class="menu-row"><span class="menu-name">Dogma Hoptopod</span><span class="dots"></span><span class="menu-price">420</span></div>
 
-            <h3 class="menu-category-title">🍺 Točeno Pivo (0.5 / 0.25)</h3>
-            <div class="menu-row"><span class="menu-name">Salto Lager</span><span class="dots"></span><span class="menu-price">310 / 210</span></div>
-            <div class="menu-row"><span class="menu-name">Salto Stout</span><span class="dots"></span><span class="menu-price">390 / 290</span></div>
-            <div class="menu-row"><span class="menu-name">Salto Wit</span><span class="dots"></span><span class="menu-price">340 / 240</span></div>
-            <div class="menu-row"><span class="menu-name">Salto Pale Ale</span><span class="dots"></span><span class="menu-price">330 / 230</span></div>
-            <div class="menu-row"><span class="menu-name">Dogma Hoptopod</span><span class="dots"></span><span class="menu-price">420 / 320</span></div>
-            <div class="menu-row"><span class="menu-name">Dogma Promenjivo</span><span class="dots"></span><span class="menu-price">430 / 330</span></div>
-            <div class="menu-row"><span class="menu-name">HOG Loki / Freya / Mjolnir</span><span class="dots"></span><span class="menu-price">390 / 290</span></div>
-
-            <h3 class="menu-category-title">🍾 Flaširano Pivo</h3>
-            <div class="menu-row"><span class="menu-name">Heineken 0.25</span><span class="dots"></span><span class="menu-price">290</span></div>
-            <div class="menu-row"><span class="menu-name">Corona 0.33</span><span class="dots"></span><span class="menu-price">390</span></div>
-            <div class="menu-row"><span class="menu-name">Svetionik 0.33</span><span class="dots"></span><span class="menu-price">360</span></div>
-
-            <h3 class="menu-category-title">🍊 Sveže Ceđeno (0.3)</h3>
-            <div class="menu-row">
-                <div><span class="menu-name">Jutarnji Miks</span><span class="menu-desc">jabuka, pomorandža, šargarepa</span></div>
-                <span class="dots"></span><span class="menu-price">390</span>
-            </div>
-            <div class="menu-row">
-                <div><span class="menu-name">Zeleni Miks</span><span class="menu-desc">jabuka, kivi, limeta, nana</span></div>
-                <span class="dots"></span><span class="menu-price">390</span>
-            </div>
-            <div class="menu-row">
-                <div><span class="menu-name">Gvozdeni Miks</span><span class="menu-desc">pomorandža, šargarepa, cvekla</span></div>
-                <span class="dots"></span><span class="menu-price">410</span>
-            </div>
+            <h3 class="menu-category-title">🍹 Sveže Ceđeno</h3>
+            <div class="menu-row"><span class="menu-name">Zeleni Miks</span><span class="dots"></span><span class="menu-price">390</span></div>
             <div class="menu-row"><span class="menu-name">Limunada</span><span class="dots"></span><span class="menu-price">210</span></div>
-
-            <h3 class="menu-category-title">🥤 Šejkovi</h3>
-            <div class="menu-row"><span class="menu-name">Plazma Šejk</span><span class="dots"></span><span class="menu-price">420</span></div>
-            <div class="menu-row"><span class="menu-name">Banana Šejk</span><span class="dots"></span><span class="menu-price">410</span></div>
-            <div class="menu-row"><span class="menu-name">Protein Šejk</span><span class="dots"></span><span class="menu-price">470</span></div>
-
-            <h3 class="menu-category-title">🥃 Žestina & Rakije (0.04)</h3>
-            <div class="menu-row"><span class="menu-name">Toplička suza (Kajsija/Dunja)</span><span class="dots"></span><span class="menu-price">260 / 270</span></div>
-            <div class="menu-row"><span class="menu-name">Absolut Vodka</span><span class="dots"></span><span class="menu-price">310</span></div>
-            <div class="menu-row"><span class="menu-name">Havana 3 Rum</span><span class="dots"></span><span class="menu-price">340</span></div>
-            <div class="menu-row"><span class="menu-name">Jack Daniel's</span><span class="dots"></span><span class="menu-price">410</span></div>
-            <div class="menu-row"><span class="menu-name">Jameson</span><span class="dots"></span><span class="menu-price">360</span></div>
-            <div class="menu-row"><span class="menu-name">Monkey 47 Gin</span><span class="dots"></span><span class="menu-price">660</span></div>
-
-            <p style="text-align:center; margin-top:3rem; font-size:0.8rem; opacity:0.6;">Sve cene su izražene u dinarima sa uračunatim PDV-om.</p>
-
+            
+            <p style="text-align:center; margin-top:2rem; opacity:0.6;">*Cene su izražene u RSD sa PDV-om.</p>
         </div>
     </div>
 
     <footer id="kontakt">
+        <div class="container footer-content">
+             <div class="footer-col"><h4>Spirit Kafebar</h4><p>Vidimo se na kafi!</p></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2025 Spirit Kafebar.</p></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
         <div class="container footer-bottom">
             <p>&copy; 2025 Spirit Kafebar.</p>
         </div>
