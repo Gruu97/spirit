@@ -579,78 +579,82 @@ footer {
     opacity: 0.6;
 }
 
-/* --- MOBILNI PRIKAZ (POPRAVLJENO) --- */
+/* --- MOBILNI PRIKAZ (FINALNA POPRAVKA) --- */
 @media (max-width: 768px) {
-    /* Prikazivanje Hamburger dugmeta */
+    /* 1. HAMBURGER DUGME - MORA BITI FIKSNO I NA VRHU */
     .hamburger {
         display: block;
-        z-index: 2000; /* Mora biti iznad menija */
+        position: fixed; /* Ovo je ključno! */
+        top: 20px;       /* Odmaknuto od vrha */
+        right: 20px;     /* Odmaknuto od desne ivice */
+        z-index: 9999;   /* Najveći broj da bude iznad menija */
+        background: transparent; /* Bez pozadine */
     }
 
-    /* Animacija za X (ovo ti već radi, ali neka stoji) */
+    /* Boja crtica kada je meni otvoren mora biti bela */
+    .hamburger .bar {
+        background-color: var(--text-light); 
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Mala senka da se bolje vidi */
+    }
+
+    /* Animacija u X (ovo ostaje isto) */
     .hamburger.active .bar:nth-child(2) { opacity: 0; }
     .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    /* STIL ZA MENI KOJI SE OTVARA */
+    /* 2. MENI KOJI ISKAČE */
     .nav-links {
-        position: fixed; /* Fiksirano preko celog ekrana */
+        position: fixed;
         top: 0;
-        right: 0; /* Umesto left, stavljamo right da ne beži */
-        height: 100vh; /* Cela visina ekrana */
-        width: 100%;   /* Cela širina */
-        background-color: #2F5C63; /* Tvoja Petrol zelena boja (hardkodirana da budemo sigurni) */
+        right: 0; /* Desno poravnanje */
+        height: 100vh;
+        width: 100%;
+        background-color: #2F5C63; /* Petrol zelena */
         
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Centrira linkove vertikalno */
-        align-items: center;     /* Centrira linkove horizontalno */
+        justify-content: center;
+        align-items: center;
         gap: 2rem;
         
-        /* Početno stanje - SKRIVENO */
-        transform: translateX(100%); /* Gurnuto desno van ekrana */
-        transition: transform 0.4s ease-in-out; /* Lepa animacija klizanja */
-        z-index: 1500; /* Ispod hamburgera (2000), ali iznad sajta */
+        /* Skriveno po defaultu */
+        transform: translateX(100%); 
+        transition: transform 0.4s ease-in-out;
+        z-index: 9990; /* Manje od hamburgera (9999), ali više od sajta */
         
-        /* Resetovanje senke i paddinga */
         box-shadow: none;
         padding-top: 0;
     }
 
-    /* KADA SE OTVORI (JS dodaje ovu klasu) */
+    /* Kada je aktivan (JS dodaje ovu klasu) */
     .nav-links.active {
-        transform: translateX(0); /* Vraća se na ekran */
+        transform: translateX(0); /* Pojavljuje se */
     }
 
-    /* Stilovi za linkove unutar mobilnog menija */
+    /* 3. LINKOVI UNUTAR MENIJA */
     .nav-links li {
-        margin: 15px 0;
-        opacity: 0; /* Skriveni dok se ne otvori */
-        animation: fadeIn 0.5s forwards 0.3s; /* Fade-in efekat */
+        margin: 10px 0;
+        width: 100%; /* Da bi centriranje radilo lepo */
+        text-align: center;
     }
 
     .nav-links a {
-        font-size: 1.5rem; /* Veća slova za prste */
-        color: #FAFAF5;    /* Svetla boja teksta */
-        display: block;
+        font-size: 1.5rem;
+        color: #FAFAF5;
+        display: inline-block;
+        padding: 10px;
     }
 
-    /* Dugme u meniju */
-    .nav-cta {
-        background-color: #C87961 !important; /* Terakota */
-        padding: 1rem 2rem;
-        width: 100%;
-        text-align: center;
+    /* Dugme "Meni" i "Rezerviši" na telefonu */
+    .btn-menu-link, .nav-cta {
+        font-size: 1.2rem !important;
+        padding: 15px 30px !important;
+        display: inline-block;
+        margin: 0 auto;
     }
-    
-    /* Prilagođavanje Hero teksta na telefonu */
-    .hero h1 { font-size: 2.2rem; padding: 0 10px; }
+
+    /* Ostala prilagođavanja za telefon */
+    .hero h1 { font-size: 2.2rem; padding: 0 15px; }
     .vibe-container { flex-direction: column; }
     .menu-wrapper { padding: 1.5rem; margin: 0; border-radius: 0; }
 }
-
-/* Animacija za pojavljivanje linkova */
-@keyframes fadeIn {
-    to { opacity: 1; }
-}
-
