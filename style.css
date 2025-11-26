@@ -1,22 +1,16 @@
-9/* --- 1. DEFINICIJA BOJA I VARIJABLI --- */
+/* --- 1. DEFINICIJA BOJA I VARIJABLI --- */
 :root {
-    --primary-color: #2F5C63; /* Petrol Zelena - Glavna */
-    --bg-body: #F2EBE0;       /* Topla Bež - Pozadina */
-    --accent-color: #C87961;  /* Terakota - Detalji */
-    --text-dark: #1F2829;     /* Skoro crna */
-    --text-light: #FAFAF5;    /* Skoro bela */
-    --card-bg: #FFFFFF;       /* Bela za kartice */
-    
-    /* Senke za dubinu */
+    --primary-color: #2F5C63; /* Petrol Zelena */
+    --bg-body: #F2EBE0;       /* Topla Bež */
+    --accent-color: #C87961;  /* Terakota */
+    --text-dark: #1F2829;
+    --text-light: #FAFAF5;
     --shadow-soft: 0 10px 40px rgba(47, 92, 99, 0.08);
-    --shadow-hover: 0 15px 50px rgba(47, 92, 99, 0.15);
-    
-    /* Fontovi */
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
 }
 
-/* --- 2. OSNOVNA POSTAVKA --- */
+/* --- 2. BAZA --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -24,7 +18,7 @@ body {
     color: var(--text-dark);
     font-family: var(--font-body);
     line-height: 1.7;
-    overflow-x: hidden; /* Sprečava horizontalno skrolovanje */
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
@@ -38,9 +32,9 @@ a { text-decoration: none; transition: 0.3s; color: inherit; }
 ul { list-style: none; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-/* --- 3. NAVIGACIJA --- */
+/* --- 3. NAVIGACIJA (POPRAVLJENA BOJA) --- */
 .navbar {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Petrol Zelena OBAVEZNO */
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -52,6 +46,7 @@ ul { list-style: none; }
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* Bitno za pozicioniranje menija */
 }
 
 .logo {
@@ -68,21 +63,18 @@ ul { list-style: none; }
 }
 
 .nav-links a {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.95);
     font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 500;
 }
 
-.nav-links a:hover { color: var(--accent-color); }
-
 .btn-menu-link {
     border: 1px solid rgba(255,255,255,0.4);
     padding: 6px 14px;
     border-radius: 50px;
 }
-.btn-menu-link:hover { background: var(--text-light); color: var(--primary-color) !important; }
 
 .nav-cta {
     background-color: var(--accent-color);
@@ -90,23 +82,184 @@ ul { list-style: none; }
     border-radius: 50px;
     color: white !important;
 }
-.nav-cta:hover { background-color: #b06650; transform: translateY(-2px); }
 
-/* --- 4. HERO SEKCIJA --- */
+/* --- 4. HERO SEKCIJA (CENTRIRANA) --- */
 .hero, .page-header {
     height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: center; /* OBAVEZNO CENTRIRANJE */
     position: relative;
     background-size: cover;
     background-position: center;
     color: var(--text-light);
 }
-
 .page-header { height: 50vh; margin-bottom: 4rem; }
 
+.overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(47, 92, 99, 0.4), rgba(47, 92, 99, 0.85));
+}
+
+.hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; margin: 0 auto; }
+.hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--text-light); text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+.hero p { font-size: 1.2rem; margin-bottom: 2.5rem; opacity: 0.95; }
+
+/* DUGMAD */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 10px;
+    cursor: pointer;
+}
+.btn-primary { background-color: var(--accent-color); color: white; border: 2px solid var(--accent-color); }
+.btn-outline { background: transparent; border: 2px solid white; color: white; }
+
+/* --- 5. NOVI CIK-CAK LAYOUT (ZIG-ZAG) --- */
+.features, .vibe-section { padding: 5rem 0; overflow: hidden; }
+
+.section-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 5rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--accent-color); margin: 15px auto 0; }
+
+.zigzag-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    margin-bottom: 6rem; /* Razmak između sekcija */
+}
+
+/* Svaki drugi element (parni) obrće redosled (Slika levo -> Slika desno) */
+.zigzag-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.zigzag-text {
+    flex: 1;
+    padding: 2rem;
+}
+
+.zigzag-text h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.zigzag-text p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.zigzag-image {
+    flex: 1;
+    position: relative;
+}
+
+.zigzag-image img {
+    width: 100%;
+    height: 400px; /* Visina slike na desktopu */
+    object-fit: cover;
+    border-radius: 20px; /* Zaobljene ivice */
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.5s ease;
+}
+
+.zigzag-image img:hover {
+    transform: scale(1.02);
+}
+
+.text-link {
+    display: inline-block;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+}
+
+/* --- 6. STANDARDNE KARTICE (Za pivo.html i ostale stranice gde ne treba cik-cak) --- */
+.games-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
+.card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-soft); }
+.card-img { width: 100%; height: 240px; object-fit: cover; }
+.card-content { padding: 2rem; }
+
+/* --- 7. FOOTER & MENI STRANICA --- */
+footer { background: var(--primary-color); color: var(--text-light); padding: 5rem 0 2rem; }
+.footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; }
+.menu-wrapper { background: #fff; max-width: 900px; margin: -80px auto 4rem; padding: 4rem; border-radius: 12px; position: relative; z-index: 10; box-shadow: var(--shadow-soft); }
+.menu-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem; border-bottom: 1px dotted #eee; padding-bottom: 5px; }
+.menu-price { font-weight: 700; color: var(--primary-color); }
+
+/* --- 8. ANIMACIJE --- */
+.hidden { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
+.show { opacity: 1; transform: translateY(0); }
+
+/* --- 9. MOBILNI MENI & RESPONSIVE (POPRAVLJENO) --- */
+.hamburger { display: none; cursor: pointer; background: none; border: none; }
+.bar { display: block; width: 25px; height: 3px; margin: 5px auto; background-color: var(--text-light); transition: 0.3s; }
+
+@media (max-width: 768px) {
+    /* Navbar ostaje Petrol zelen */
+    
+    .hamburger { display: block; z-index: 1100; } /* Iznad padajućeg menija */
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* PAD AJUĆI MENI (NIJE FULLSCREEN) */
+    .nav-links {
+        position: absolute; /* Vezano za navbar, ne za ekran */
+        top: 100%; /* Odmah ispod navbara */
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color); /* Ista boja kao navbar */
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        gap: 1.5rem;
+        
+        /* Animacija spuštanja */
+        transform: scaleY(0); /* Skupljen po visini */
+        transform-origin: top; /* Širi se od gore ka dole */
+        transition: transform 0.3s ease-in-out;
+        opacity: 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        transform: scaleY(1); /* Raširen */
+        opacity: 1;
+    }
+
+    /* Prilagođavanje CIK-CAK layouta za telefon */
+    .zigzag-item, .zigzag-item:nth-child(even) {
+        flex-direction: column; /* Uvek jedna kolona */
+        gap: 1rem;
+        margin-bottom: 4rem;
+    }
+
+    .zigzag-image { width: 100%; order: -1; /* Slika uvek PRVA (iznad teksta) */ }
+    .zigzag-image img { height: 250px; }
+    .zigzag-text { padding: 1rem 0; text-align: center; } /* Tekst centriran */
+    .zigzag-text h3 { font-size: 1.8rem; }
+
+    /* Hero tekst */
+    .hero h1 { font-size: 2.2rem; padding: 0 10px; }
+}
 .overlay {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(to bottom, rgba(47, 92, 99, 0.4), rgba(47, 92, 99, 0.85));
