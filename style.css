@@ -1,112 +1,90 @@
-/* --- PROMENLJIVE (BOJE) --- */
 :root {
-    --primary-color: #495240; /* Tamno Maslinasta */
+    --primary-color: #2F4F4F; /* Dark Slate Gray / Teal nijansa sa slika */
+    --secondary-color: #E8DCC4; /* Bež boja sa Instagram postova */
     --accent-color: #C75B3D;  /* Terakota */
-    --text-light: #F5F5E9;    /* Krem */
-    --bg-light: #F9F9F2;      /* Malo svetlija krem za pozadinu */
-    --text-dark: #2B2D31;     /* Tamno siva */
-    --card-bg: #ffffff;
-    --dark-footer: #222428;
-    --transition: all 0.3s ease;
+    --text-dark: #2B2D31;
+    --text-light: #F5F5E9;
+    --bg-color: #F9F9F2;
+    --card-bg: #FFFFFF;
 }
 
-/* --- RESET --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-light);
+    background-color: var(--bg-color);
     color: var(--text-dark);
     line-height: 1.6;
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    color: var(--primary-color);
-}
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-color); }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+/* NAVIGACIJA */
+.navbar { background-color: var(--primary-color); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+.logo { color: var(--text-light); font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: bold; }
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a { color: var(--text-light); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+.nav-links a:hover { color: var(--accent-color); }
+.nav-cta { background-color: var(--accent-color); padding: 0.5rem 1rem; border-radius: 4px; }
 
-ul {
-    list-style: none;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* --- NAVIGACIJA --- */
-.navbar {
-    background-color: var(--primary-color);
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    color: var(--text-light);
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-.nav-links a {
-    color: var(--text-light);
-    font-weight: 500;
-    transition: var(--transition);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.nav-links a:hover {
-    color: var(--accent-color);
-}
-
-.nav-cta {
-    background-color: var(--accent-color);
-    padding: 0.6rem 1.2rem;
-    border-radius: 4px;
-    color: var(--text-light) !important;
-}
-
-.nav-cta:hover {
-    background-color: #a8482e;
-    transform: translateY(-2px);
-}
-
-/* --- HERO SEKCIJA --- */
+/* HERO - INDEX */
 .hero {
-    height: 85vh;
+    height: 80vh;
+    background-image: url('https://images.unsplash.com/photo-1559925393-8be03361153d?q=80&w=1920&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    display: flex; align-items: center; justify-content: center; text-align: center; position: relative;
+}
+.overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(47, 79, 79, 0.7); }
+.hero-content { position: relative; z-index: 2; color: var(--text-light); }
+.hero h1 { color: var(--text-light); font-size: 3rem; margin-bottom: 1rem; }
+.hero-sub { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
+
+/* HERO - SUBPAGES (Manji header za ostale strane) */
+.page-header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 6rem 0 3rem;
+    text-align: center;
+}
+.page-header h1 { color: var(--text-light); font-size: 2.5rem; }
+
+/* DUGMAD */
+.btn { display: inline-block; padding: 1rem 2rem; margin: 5px; border-radius: 4px; font-weight: 600; text-transform: uppercase; }
+.btn-primary { background-color: var(--accent-color); color: white; }
+.btn-outline { border: 2px solid white; color: white; }
+.btn-outline:hover { background-color: white; color: var(--primary-color); }
+
+/* RECENZIJE */
+.reviews { padding: 4rem 0; text-align: center; }
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+.review-card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.stars { color: gold; margin-bottom: 1rem; }
+.review-text { font-style: italic; color: #555; margin-bottom: 1rem; }
+.review-author { font-weight: bold; color: var(--primary-color); }
+
+/* MENI LISTA (ZA PIVO/KAFU) */
+.menu-section { padding: 4rem 0; }
+.menu-category { margin-bottom: 3rem; }
+.menu-category h3 { border-bottom: 2px solid var(--accent-color); display: inline-block; margin-bottom: 1.5rem; padding-bottom: 0.5rem; }
+.menu-item { display: flex; justify-content: space-between; margin-bottom: 1rem; border-bottom: 1px dotted #ccc; padding-bottom: 0.5rem; }
+.item-name { font-weight: 600; }
+.item-price { font-weight: bold; color: var(--accent-color); }
+.item-desc { font-size: 0.85rem; color: #666; display: block; margin-top: 0.2rem; }
+
+/* ZANIMLJIVOSTI SEKCIJA */
+.fun-facts { background-color: var(--secondary-color); padding: 4rem 0; }
+.fact-box { background: white; padding: 2rem; border-left: 5px solid var(--primary-color); margin-top: 2rem; }
+.fact-box h3 { margin-bottom: 1rem; }
+
+/* FOOTER */
+footer { background: #222; color: #eee; padding: 3rem 0 1rem; }
+.footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+.footer-bottom { text-align: center; margin-top: 3rem; opacity: 0.5; font-size: 0.8rem; }
     background-color: var(--primary-color);
     /* NOVA SLIKA ZA HERO */
     background-image: url('https://images.unsplash.com/photo-1505275350441-83dcda8eeef5?q=80&w=1920&auto=format&fit=crop'); 
