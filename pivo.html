@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="sr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kraft Pivo | Spirit Kafebar</title>
+    <title>Svet Kraft Piva | Spirit Kafebar</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
@@ -14,92 +13,82 @@
         <div class="container nav-container">
             <a href="index.html" class="logo">Spirit Kafebar</a>
             <ul class="nav-links">
-                <li><a href="pivo.html" style="color:var(--accent-color)">Pivo & Kraft</a></li>
-                <li><a href="kafa.html">Kafa & Napici</a></li>
-                <li><a href="igre.html">Društvene Igre</a></li>
-                <li><a href="#kontakt" class="nav-cta">Rezerviši</a></li>
+                <li><a href="meni.html" class="btn-menu-link">📜 Kompletan Meni</a></li>
+                <li><a href="pivo.html" style="color:var(--accent-color)">Pivo</a></li>
+                <li><a href="kafa.html">Kafa</a></li>
+                <li><a href="igre.html">Igre</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="page-header">
-        <div class="container">
-            <h1>Filozofija Pene i Hmelja</h1>
-            <p>Najbolji izbor domaćeg kraft piva u kraju.</p>
+    <header class="page-header" style="background-image: url('https://images.unsplash.com/photo-1535958636474-b021ee8876a3?q=80&w=1920&auto=format&fit=crop');">
+        <div class="overlay"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h1>Pena koja priča priču</h1>
+            <p style="color: #F5F5E9; font-size: 1.2rem; margin-top: 10px;">Od lokalnih majstora do svetskih stilova.</p>
+            <a href="meni.html" class="btn btn-primary" style="margin-top: 20px;">Pogledaj cene</a>
         </div>
     </header>
 
-    <section class="menu-section">
-        <div class="container">
+    <section class="games-section"> <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">Zvezde naših točilica</h2>
             
-            <div class="menu-category">
-                <h3>Točeno Pivo (0.5 / 0.33)</h3>
+            <div class="games-grid">
                 
-                <div class="menu-item">
-                    <div><span class="item-name">Salto Lager</span></div>
-                    <span class="item-price">310 / 210 RSD</span>
+                <div class="game-card">
+                    <img src="https://images.unsplash.com/photo-1566633806327-68e152aaf26d?q=80&w=600&auto=format&fit=crop" alt="Crno pivo Stout" class="game-img">
+                    <div class="game-info">
+                        <h3>Salto Stout</h3>
+                        <p class="game-type">Stout | Tamno & Kremasto</p>
+                        <p class="game-desc">Pivo za hedoniste. Dominiraju note crne čokolade i pržene kafe. Gusta pena i puno telo čine ga idealnim izborom za lagano ispijanje uz razgovor.</p>
+                    </div>
                 </div>
-                <div class="menu-item">
-                    <div><span class="item-name">Salto Stout</span> <span class="item-desc">Tamno, kremasto, note čokolade.</span></div>
-                    <span class="item-price">390 / 290 RSD</span>
-                </div>
-                <div class="menu-item">
-                    <div><span class="item-name">Salto Wit</span></div>
-                    <span class="item-price">340 / 240 RSD</span>
-                </div>
-                <div class="menu-item">
-                    <div><span class="item-name">Salto Pale Ale</span></div>
-                    <span class="item-price">330 / 230 RSD</span>
-                </div>
-                <div class="menu-item">
-                    <div><span class="item-name">Dogma Hoptopod</span> <span class="item-desc">Ozbiljna IPA za hmelj entuzijaste.</span></div>
-                    <span class="item-price">420 / 320 RSD</span>
-                </div>
-                <div class="menu-item">
-                    <div><span class="item-name">HOG Loki / Freya / Mjolnir</span></div>
-                    <span class="item-price">~ 390 RSD</span>
-                </div>
-            </div>
 
-            <div class="menu-category">
-                <h3>Flaširano Pivo</h3>
-                <div class="menu-item">
-                    <span class="item-name">Heineken 0.25</span>
-                    <span class="item-price">290 RSD</span>
+                <div class="game-card">
+                    <img src="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?q=80&w=600&auto=format&fit=crop" alt="IPA pivo" class="game-img">
+                    <div class="game-info">
+                        <h3>Dogma Hoptopod</h3>
+                        <p class="game-type">IPA | Hmeljna Bomba</p>
+                        <p class="game-desc">Ikona srpske kraft scene. Eksplozija tropskog voća i citrusa u mirisu, sa onom prepoznatljivom IPA gorčinom koja zove na još jedan gutljaj.</p>
+                    </div>
                 </div>
-                <div class="menu-item">
-                    <span class="item-name">Corona 0.33</span>
-                    <span class="item-price">390 RSD</span>
-                </div>
-                <div class="menu-item">
-                    <span class="item-name">Svetionik 0.33</span>
-                    <span class="item-price">360 RSD</span>
-                </div>
-            </div>
 
+                <div class="game-card">
+                    <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=600&auto=format&fit=crop" alt="Svetlo pivo Lager" class="game-img">
+                    <div class="game-info">
+                        <h3>Salto Lager</h3>
+                        <p class="game-type">Lager | Klasika & Svežina</p>
+                        <p class="game-desc">Dokaz da lager ne mora biti dosadan. Kristalno čist, osvežavajući, sa blagim notama hleba i finom gaziranošću. Savršen za početak večeri.</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
     <section class="fun-facts">
         <div class="container">
-            <h2 class="section-title">Da li ste znali?</h2>
+            <h2 class="section-title">Pivske mudrosti</h2>
             
             <div class="fact-box">
-                <h3>🍺 Zašto Kraft, a ne Industrija?</h3>
-                <p>Kraft pivo se ne filtrira i ne pasterizuje istim intenzitetom kao industrijsko. To znači da u čaši dobijate "živ" proizvod, pun vitamina B, bez konzervansa i sa mnogo kompleksnijim ukusom. Naš <strong>Salto Stout</strong> ima note kafe i čokolade koje dolaze isključivo od prženog ječma, bez veštačkih aroma.</p>
+                <h3>🍺 Zašto ne služimo "ledeno" pivo?</h3>
+                <p>Ako je pivo previše hladno (kao iz zamrzivača), receptori na jeziku se "smrznu" i ne osećate pravi ukus. Naša kraft piva služimo na optimalnoj temperaturi (6-10°C) kako bi arome hmelja i slada došle do punog izražaja.</p>
             </div>
 
             <div class="fact-box">
-                <h3>🌡️ Temperatura je ključna</h3>
-                <p>Da li ste znali da se IPA i Stout piva ne piju ledena? Ako je pivo previše hladno (kao iz frižidera), arome se "zaključaju". Zato naša tamna piva služimo na optimalnoj temperaturi kako biste osetili punoću ukusa.</p>
+                <h3>🌾 Šta je zapravo "Kraft"?</h3>
+                <p>Kraft pivare su male, nezavisne i tradicionalne. Za razliku od industrije koja koristi kukuruznu krupicu da pojeftini proizvodnju, kraft pivo u Spiritu je napravljeno od 100% ječmenog slada, hmelja, kvasca i vode. Kvalitet bez kompromisa.</p>
             </div>
         </div>
     </section>
 
     <footer id="kontakt">
         <div class="container footer-content">
-             <div class="footer-col"><h4>Spirit Kafebar</h4><p>Komšijski kutak.</p></div>
+            <div class="footer-col"><h4>Spirit Kafebar</h4><p>Komšijski kutak.</p></div>
+            <div class="footer-col"><h4>Radno Vreme</h4><p>Svaki dan: 08:00 - 23:00</p></div>
+             <div class="footer-col"><a href="meni.html" class="text-link">Pogledaj Cenovnik &rarr;</a></div>
         </div>
+        <div class="footer-bottom"><p>&copy; 2025 Spirit Kafebar.</p></div>
     </footer>
 
 </body>
