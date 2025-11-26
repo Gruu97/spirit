@@ -1,447 +1,475 @@
+/* --- 1. DEFINICIJA BOJA I VARIJABLI (PALETA SA INSTAGRAMA) --- */
 :root {
-    --primary-color: #2F4F4F; /* Dark Slate Gray / Teal nijansa sa slika */
-    --secondary-color: #E8DCC4; /* Bež boja sa Instagram postova */
-    --accent-color: #C75B3D;  /* Terakota */
-    --text-dark: #2B2D31;
-    --text-light: #F5F5E9;
-    --bg-color: #F9F9F2;
+    /* Glavna Petrol Zelena (sa dna tvojih slika) */
+    --primary-color: #2F5C63; 
+    
+    /* Topla Bež pozadina (sa vrha tvojih slika) */
+    --bg-body: #F2EBE0; 
+    
+    /* Akcentna Terakota (nameštaj/detalji) */
+    --accent-color: #C87961; 
+    
+    /* Tamna za tekst (nije crna, već tamno sivo-zelena) */
+    --text-dark: #1F2829;
+    
+    /* Svetla za tekst na tamnoj pozadini */
+    --text-light: #FAFAF5;
+    
+    /* Bela za kartice */
     --card-bg: #FFFFFF;
+    
+    /* Senke za premium izgled */
+    --shadow-soft: 0 10px 40px rgba(47, 92, 99, 0.08);
+    --shadow-hover: 0 15px 50px rgba(47, 92, 99, 0.15);
+    
+    /* Fontovi */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* --- 2. RESET I BAZA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
+    background-color: var(--bg-body);
     color: var(--text-dark);
-    line-height: 1.6;
+    font-family: var(--font-body);
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased; /* Lepši font rendering */
 }
 
-h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-color); }
-a { text-decoration: none; color: inherit; }
-ul { list-style: none; }
-.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-/* NAVIGACIJA */
-.navbar { background-color: var(--primary-color); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
-.nav-container { display: flex; justify-content: space-between; align-items: center; }
-.logo { color: var(--text-light); font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: bold; }
-.nav-links { display: flex; gap: 2rem; }
-.nav-links a { color: var(--text-light); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
-.nav-links a:hover { color: var(--accent-color); }
-.nav-cta { background-color: var(--accent-color); padding: 0.5rem 1rem; border-radius: 4px; }
-
-/* HERO - INDEX */
-.hero {
-    height: 80vh;
-    background-image: url('https://images.unsplash.com/photo-1559925393-8be03361153d?q=80&w=1920&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
-    display: flex; align-items: center; justify-content: center; text-align: center; position: relative;
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    line-height: 1.2;
+    font-weight: 700;
 }
-.overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(47, 79, 79, 0.7); }
-.hero-content { position: relative; z-index: 2; color: var(--text-light); }
-.hero h1 { color: var(--text-light); font-size: 3rem; margin-bottom: 1rem; }
-.hero-sub { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
 
-/* HERO - SUBPAGES (Manji header za ostale strane) */
-.page-header {
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* --- 3. MODERNIZOVANA NAVIGACIJA --- */
+.navbar {
     background-color: var(--primary-color);
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
     color: var(--text-light);
-    padding: 6rem 0 3rem;
-    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    letter-spacing: 1px;
 }
-.page-header h1 { color: var(--text-light); font-size: 2.5rem; }
 
-/* DUGMAD */
-.btn { display: inline-block; padding: 1rem 2rem; margin: 5px; border-radius: 4px; font-weight: 600; text-transform: uppercase; }
-.btn-primary { background-color: var(--accent-color); color: white; }
-.btn-outline { border: 2px solid white; color: white; }
-.btn-outline:hover { background-color: white; color: var(--primary-color); }
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
 
-/* RECENZIJE */
-.reviews { padding: 4rem 0; text-align: center; }
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
-.review-card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-.stars { color: gold; margin-bottom: 1rem; }
-.review-text { font-style: italic; color: #555; margin-bottom: 1rem; }
-.review-author { font-weight: bold; color: var(--primary-color); }
+.nav-links a {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
 
-/* MENI LISTA (ZA PIVO/KAFU) */
-.menu-section { padding: 4rem 0; }
-.menu-category { margin-bottom: 3rem; }
-.menu-category h3 { border-bottom: 2px solid var(--accent-color); display: inline-block; margin-bottom: 1.5rem; padding-bottom: 0.5rem; }
-.menu-item { display: flex; justify-content: space-between; margin-bottom: 1rem; border-bottom: 1px dotted #ccc; padding-bottom: 0.5rem; }
-.item-name { font-weight: 600; }
-.item-price { font-weight: bold; color: var(--accent-color); }
-.item-desc { font-size: 0.85rem; color: #666; display: block; margin-top: 0.2rem; }
+.nav-links a:hover {
+    color: var(--accent-color);
+}
 
-/* ZANIMLJIVOSTI SEKCIJA */
-.fun-facts { background-color: var(--secondary-color); padding: 4rem 0; }
-.fact-box { background: white; padding: 2rem; border-left: 5px solid var(--primary-color); margin-top: 2rem; }
-.fact-box h3 { margin-bottom: 1rem; }
+/* Dugme za meni u navigaciji */
+.btn-menu-link {
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 8px 16px;
+    border-radius: 50px; /* Pill shape */
+}
 
-/* FOOTER */
-footer { background: #222; color: #eee; padding: 3rem 0 1rem; }
-.footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-.footer-bottom { text-align: center; margin-top: 3rem; opacity: 0.5; font-size: 0.8rem; }
-    background-color: var(--primary-color);
-    /* NOVA SLIKA ZA HERO */
-    background-image: url('https://images.unsplash.com/photo-1505275350441-83dcda8eeef5?q=80&w=1920&auto=format&fit=crop'); 
-    background-size: cover;
-    background-position: center;
+.btn-menu-link:hover {
+    background-color: var(--text-light);
+    color: var(--primary-color) !important;
+    border-color: var(--text-light);
+}
+
+/* --- 4. HERO SEKCIJA (SA BOLJIM KONTRASTOM) --- */
+.hero, .page-header {
+    position: relative;
     display: flex;
     align-items: center;
-    position: relative;
-    color: var(--text-light);
+    justify-content: center;
     text-align: center;
+    color: var(--text-light);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
+.hero { height: 85vh; }
+.page-header { height: 50vh; margin-bottom: 4rem; }
+
+/* Overlay gradient umesto obične crne boje - izgleda skuplje */
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(43, 45, 49, 0.65); /* Malo jači overlay za bolji kontrast */
+    background: linear-gradient(to bottom, rgba(47, 92, 99, 0.4), rgba(47, 92, 99, 0.8));
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
     max-width: 800px;
-    margin: 0 auto;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 3.8rem;
     margin-bottom: 1.5rem;
-    line-height: 1.1;
     color: var(--text-light);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-.hero-sub {
-    font-size: 1.25rem;
+.hero p, .page-header p {
+    font-size: 1.3rem;
     margin-bottom: 2.5rem;
     opacity: 0.95;
     font-weight: 400;
 }
 
-/* --- DUGMAD --- */
+/* --- 5. DUGMAD (TACTILE FEEL) --- */
 .btn {
     display: inline-block;
-    padding: 1rem 2rem;
-    border-radius: 4px;
+    padding: 1rem 2.2rem;
+    border-radius: 50px; /* Zaobljena dugmad su modernija */
     font-weight: 600;
-    transition: var(--transition);
-    margin: 0 10px;
-    font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .btn-primary {
     background-color: var(--accent-color);
-    color: var(--text-light);
+    color: white;
     border: 2px solid var(--accent-color);
 }
 
 .btn-primary:hover {
-    background-color: transparent;
-    color: var(--accent-color);
+    background-color: #b06650;
+    border-color: #b06650;
+    transform: translateY(-2px);
 }
 
 .btn-outline {
-    border: 2px solid var(--text-light);
-    color: var(--text-light);
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
 }
 
 .btn-outline:hover {
-    background-color: var(--text-light);
+    background-color: white;
     color: var(--primary-color);
+    transform: translateY(-2px);
 }
 
-/* --- INTRO & FEATURES (KARTICE SA SLIKAMA) --- */
-.intro {
-    padding: 5rem 0 3rem;
-    text-align: center;
+/* --- 6. PREMIUM KARTICE (Pivo, Kafa, Igre) --- */
+.games-section, .menu-section {
+    padding: 5rem 0;
 }
 
 .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.section-desc {
-    color: #666;
-    font-size: 1.1rem;
-}
-
-.features {
-    padding: 2rem 0 6rem;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5rem;
-}
-
-.card {
-    background: var(--card-bg);
-    border-radius: 12px;
-    overflow: hidden; /* Da slika ne viri van zaobljenih ivica */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    transition: var(--transition);
-    border: 1px solid rgba(0,0,0,0.05);
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-}
-
-/* NOVO: Stilovi za slike u karticama */
-.card-img {
-    width: 100%;
-    height: 220px; /* Fiksna visina za uniformnost */
-    object-fit: cover; /* Slika popunjava prostor bez deformacije */
-    border-bottom: 3px solid var(--accent-color);
-}
-
-.card-content {
-    padding: 2rem;
-}
-
-.card h3 {
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-}
-
-.card p {
-    margin-bottom: 1.5rem;
-    color: #555;
-    font-size: 0.95rem;
-}
-
-.text-link {
-    color: var(--accent-color);
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    transition: var(--transition);
-}
-
-.text-link:hover {
-    transform: translateX(5px);
-}
-
-/* --- VIBE SEKCIJA SA SLIKOM --- */
-.vibe {
-    background-color: #EFEFE6; /* Malo tamnija nijansa krema za kontrast */
-    padding: 6rem 0;
-}
-
-.vibe-content {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-}
-
-.vibe-text {
-    flex: 1;
-}
-
-.vibe-text h2 {
     font-size: 2.8rem;
-    margin-bottom: 1.5rem;
-}
-
-.vibe-text p {
-    font-size: 1.05rem;
-    color: #444;
-    margin-bottom: 2rem;
-}
-
-.vibe-image {
-    flex: 1;
-    position: relative;
-}
-
-/* NOVO: Stil za pravu sliku u vibe sekciji */
-.vibe-real-img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    object-fit: cover;
-    min-height: 400px;
-}
-
-/* --- FOOTER --- */
-footer {
-    background-color: var(--dark-footer);
-    color: var(--text-light);
-    padding: 5rem 0 2rem;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 3rem;
-    margin-bottom: 3rem;
-}
-
-.footer-col h4 {
-    color: var(--text-light);
-    margin-bottom: 1.5rem;
-    font-size: 1.3rem;
-}
-
-.footer-col p {
-    margin-bottom: 0.8rem;
-    font-size: 0.95rem;
-    opacity: 0.7;
-    line-height: 1.8;
-}
-
-.socials a {
-    color: var(--accent-color);
-    font-weight: 600;
-    transition: var(--transition);
-}
-
-.socials a:hover {
-    color: var(--text-light);
-}
-
-.footer-bottom {
     text-align: center;
-
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 2rem;
-    font-size: 0.85rem;
-    opacity: 0.5;
+    margin-bottom: 4rem;
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
 }
-/* --- STILOVI ZA STRANICU IGRE --- */
 
-.games-section {
-    padding: 4rem 0;
-    background-color: #fff;
+/* Dekorativna linija ispod naslova */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 15px auto 0;
 }
 
 .games-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
 }
 
-.game-card {
-    background: #F9F9F2;
-    border-radius: 12px;
+.game-card, .card {
+    background: var(--card-bg);
+    border-radius: 16px; /* Veći radius */
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
-    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    border: none; /* Sklanjamo jeftine bordere */
 }
 
-.game-card:hover {
-    transform: translateY(-5px);
+.game-card:hover, .card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
 }
 
-.game-img {
+/* Slike unutar kartica - KLJUČNO ZA DIZAJN */
+.game-img, .card-img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 4px solid var(--accent-color);
+    height: 240px; /* Fiksna visina za sve slike */
+    object-fit: cover; /* Slika popunjava prostor bez deformacije */
+    display: block;
 }
 
-.game-info {
-    padding: 1.5rem;
+.game-info, .card-content {
+    padding: 2rem;
 }
 
-.game-info h3 {
+.game-info h3, .card h3 {
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    font-size: 1.4rem;
+    color: var(--primary-color);
 }
 
 .game-type {
     font-size: 0.8rem;
     color: var(--accent-color);
     text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
     margin-bottom: 1rem;
+    display: block;
 }
 
-.game-desc {
-    font-size: 0.95rem;
+.game-desc, .card p {
     color: #555;
-    line-height: 1.5;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
-/* Lista ostalih igara */
-.other-games {
-    padding: 3rem 0 5rem;
-    background-color: var(--bg-color);
+.text-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    border-bottom: 2px solid var(--accent-color);
 }
 
-.games-list-grid {
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
-    flex-wrap: wrap;
+/* --- 7. MENI LISTA (Izgled papirnog menija) --- */
+.menu-wrapper {
+    background: #fff;
+    max-width: 900px;
+    margin: -80px auto 4rem; /* Negativna margina da uđe u header */
+    padding: 4rem;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
 }
 
-.game-list li {
+.menu-header-title {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    font-size: 3rem;
+}
+
+.menu-category-title {
+    font-family: var(--font-body);
+    color: var(--accent-color);
     font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #eee;
+    margin: 3rem 0 1.5rem 0;
+    padding-bottom: 0.5rem;
+}
+
+.menu-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
     margin-bottom: 1rem;
+}
+
+.menu-name {
+    font-weight: 600;
+    font-size: 1.1rem;
     color: var(--text-dark);
 }
 
-@media (max-width: 768px) {
-    .games-list-grid {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-    }
+.menu-desc {
+    display: block;
+    font-size: 0.9rem;
+    color: #777;
+    font-style: italic;
 }
 
+.menu-price {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-left: 1rem;
+    white-space: nowrap;
+}
 
-/* --- RESPONSIVE (Mobilni) --- */
+.dots {
+    flex-grow: 1;
+    border-bottom: 1px dotted #ccc;
+    margin: 0 15px;
+    position: relative;
+    top: -5px;
+}
+
+/* --- 8. ZANIMLJIVOSTI (FUN FACTS) --- */
+.fun-facts {
+    background-color: white; /* Kontrast na bež body */
+    padding: 5rem 0;
+}
+
+.fact-box {
+    background-color: var(--bg-body);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border-left: 6px solid var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.fact-box h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+/* --- 9. RECENZIJE --- */
+.reviews {
+    padding: 6rem 0;
+}
+
+.review-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+}
+
+/* Navodnici za citat */
+.review-card::before {
+    content: '"';
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    color: var(--accent-color);
+    opacity: 0.2;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    line-height: 1;
+}
+
+.stars {
+    color: #F4B400;
+    margin-bottom: 1rem;
+}
+
+.review-text {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- 10. FOOTER --- */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 5rem 0 2rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.footer-col h4 {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.footer-col p {
+    opacity: 0.8;
+    margin-bottom: 0.8rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 3rem;
+    padding-top: 2rem;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+/* --- 11. MOBILNI PRIKAZ (RESPONSIVE) --- */
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
+        display: none; /* Ovde bi išao JS za burger meni */
     }
     
     .hero h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero-sub {
-        font-size: 1.1rem;
+        font-size: 2.5rem;
     }
     
-    .vibe-content {
-        flex-direction: column;
-    }
-
-    .vibe-text h2 {
-        font-size: 2.2rem;
-    }
-
-    .vibe-image {
-        width: 100%;
-    }
-    
-    .hero-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .btn {
+    .menu-wrapper {
         margin: 0;
-        width: 100%;
-        text-align: center;
+        padding: 2rem;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .page-header {
+        height: 40vh;
     }
 }
