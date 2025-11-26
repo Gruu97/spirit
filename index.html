@@ -9,10 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">Spirit Kafebar</a>
-            <button class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+            
+            <button class="hamburger" aria-label="Meni">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
             <ul class="nav-links">
                 <li><a href="meni.html" class="btn-menu-link">📜 Meni</a></li>
                 <li><a href="pivo.html">Pivo</a></li>
@@ -26,7 +33,7 @@
     <header class="hero" style="background-image: url('https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1920&auto=format&fit=crop');">
         <div class="overlay"></div>
         <div class="container hero-content hidden">
-            <h1>Tvoj savršen potez: Vrhunsko kraft pivo, specialty kafa i najbolje igre.</h1>
+            <h1>Tvoj savršen potez: Vrhunsko pivo, kafa i igre.</h1>
             <p>Spirit Kafebar je tvoja oaza za beg od gradske buke u srcu Jerkovića.</p>
             <div class="hero-buttons">
                 <a href="#kontakt" class="btn btn-primary">Rezerviši sto</a>
@@ -35,75 +42,80 @@
         </div>
     </header>
 
-    <section class="intro-section">
-        <div class="container intro-text hidden">
-            <h2 class="section-title">Više od običnog kafića</h2>
-            <p>Tražiš mesto gde konobar zna tvoje ime? <strong>Spirit Kafebar</strong> je zajednica. Smešteni u mirnom delu naselja Braće Jerković, stvorili smo prostor gde se susreću ljubitelji <strong>kraft piva</strong> i entuzijasti <strong>društvenih igara</strong>.</p>
-        </div>
-    </section>
-
     <section class="features">
         <div class="container">
-            <div class="games-grid">
-                <div class="card hidden">
-                    <img src="https://images.unsplash.com/photo-1575037614876-c38a4d44f5b8?q=80&w=600&auto=format&fit=crop" class="card-img" alt="Pivo">
-                    <div class="card-content">
-                        <h3>Kraft Pivo</h3>
-                        <p>Rotirajuća ponuda najboljih domaćih pivara. Salto, Dogma i mnogi drugi.</p>
-                        <a href="pivo.html" class="text-link">Istraži &rarr;</a>
-                    </div>
+            <h2 class="section-title hidden">Naša Ponuda</h2>
+            
+            <div class="zigzag-item hidden">
+                <div class="zigzag-text">
+                    <h3>Kraft Revolucija</h3>
+                    <p>Zaboravi industrijski prosek. Na našim točilicama rotiramo najbolje domaće i strane zanatske pivare. IPA, Stout, Pale Ale – svaka čaša je avantura koju moraš da doživiš. Salto i Dogma su naši redovni gosti.</p>
+                    <a href="pivo.html" class="text-link">Istraži Piva &rarr;</a>
                 </div>
-                <div class="card hidden" style="transition-delay: 100ms;">
-                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=600&auto=format&fit=crop" class="card-img" alt="Kafa">
-                    <div class="card-content">
-                        <h3>Specialty Kafa</h3>
-                        <p>100% Arabika, savršen espresso i latte art. Za pravi početak dana.</p>
-                        <a href="kafa.html" class="text-link">Pogledaj &rarr;</a>
-                    </div>
-                </div>
-                <div class="card hidden" style="transition-delay: 200ms;">
-                    <img src="https://images.unsplash.com/photo-1606733847546-db8546099013?q=80&w=600&auto=format&fit=crop" class="card-img" alt="Igre">
-                    <div class="card-content">
-                        <h3>Društvene Igre</h3>
-                        <p>Preko 50 igara! Catan, Wingspan, Mačići. Ko gubi, časti turu.</p>
-                        <a href="igre.html" class="text-link">Spisak &rarr;</a>
-                    </div>
+                <div class="zigzag-image">
+                    <img src="https://images.unsplash.com/photo-1575037614876-c38a4d44f5b8?q=80&w=800&auto=format&fit=crop" alt="Točeno kraft pivo">
                 </div>
             </div>
+
+            <div class="zigzag-item hidden">
+                <div class="zigzag-text">
+                    <h3>Specialty Kafa</h3>
+                    <p>Kafa je ritual, a ne samo kofein. Koristimo 100% Arabiku i premium blendove. Naši baristi su majstori ekstrakcije i latte arta. Probaj naš čuveni Cappuccino ili domaći ledeni čaj za osveženje.</p>
+                    <a href="kafa.html" class="text-link">Pogledaj Kafu &rarr;</a>
+                </div>
+                <div class="zigzag-image">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop" alt="Barista pravi kafu">
+                </div>
+            </div>
+
+            <div class="zigzag-item hidden">
+                <div class="zigzag-text">
+                    <h3>Društvene Igre</h3>
+                    <p>Preko 50 naslova na polici! Od Catan-a i Ticket to Ride-a do Exploding Kittens-a. Idealno za kišna popodneva ili večernja takmičenja sa ekipom. Jedino pravilo: Ko gubi, časti turu.</p>
+                    <a href="igre.html" class="text-link">Spisak Igara &rarr;</a>
+                </div>
+                <div class="zigzag-image">
+                    <img src="https://images.unsplash.com/photo-1606733847546-db8546099013?q=80&w=800&auto=format&fit=crop" alt="Igranje društvenih igara">
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <section class="vibe-section">
-        <div class="container vibe-container">
-            <div class="vibe-image hidden">
-                <img src="https://images.unsplash.com/photo-1442512595367-42732509d57d?q=80&w=800&auto=format&fit=crop" alt="Enterijer">
-            </div>
-            <div class="vibe-text hidden">
+    <section class="vibe-section" style="background-color: #E8DCC4;">
+        <div class="container zigzag-item hidden" style="margin-bottom: 0;">
+             <div class="zigzag-text">
                 <h2>Ušuškana Zona</h2>
-                <p>Mnogo drveta, topla svetla i murali. Pet-friendly smo!</p>
+                <p>Enterijer inspirisan prirodom i urbanim stilom. Mnogo drveta, topla svetla i murali koji pričaju priču. Spirit je "pet-friendly", tako da je i tvoj ljubimac dobrodošao gost.</p>
             </div>
-        </div>
-    </section>
-
-    <section class="reviews">
-        <div class="container">
-            <h2 class="section-title hidden">Šta kažu komšije?</h2>
-            <div class="games-grid">
-                <div class="review-card hidden"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Najbolja kafa u Jerkoviću, bez konkurencije."</p><p class="review-author">- Marko P.</p></div>
-                <div class="review-card hidden"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Super izbor piva i igara. Obožavam atmosferu."</p><p class="review-author">- Jelena S.</p></div>
-                <div class="review-card hidden"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Ušuškana zona prava! Pet friendly."</p><p class="review-author">- Nemanja D.</p></div>
+            <div class="zigzag-image">
+                <img src="https://images.unsplash.com/photo-1442512595367-42732509d57d?q=80&w=800&auto=format&fit=crop" alt="Enterijer kafića">
             </div>
         </div>
     </section>
 
     <footer id="kontakt">
         <div class="container footer-content">
-            <div class="footer-col"><h4>Spirit Kafebar</h4><p>Kvalitet. Društvo. Trenutak.</p></div>
-            <div class="footer-col"><h4>Radno Vreme</h4><p>Pon-Čet: 08-23h<br>Pet-Sub: 08-01h<br>Ned: 09-23h</p></div>
-            <div class="footer-col"><h4>Kontakt</h4><p>Braće Jerković, Beograd</p><a href="https://instagram.com/spirit_kafebar">Instagram</a></div>
+            <div class="footer-col">
+                <h4>Spirit Kafebar</h4>
+                <p>Kvalitet. Društvo. Trenutak.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Radno Vreme</h4>
+                <p>Pon - Čet: 08:00 - 23:00</p>
+                <p>Pet - Sub: 08:00 - 01:00</p>
+            </div>
+            <div class="footer-col">
+                <h4>Lokacija</h4>
+                <p>Braće Jerković, Beograd</p>
+                <a href="https://instagram.com/spirit_kafebar" style="color: #C87961;">Instagram</a>
+            </div>
         </div>
-        <div class="footer-bottom"><p>&copy; 2025 Spirit Kafebar.</p></div>
+        <div style="text-align:center; margin-top:3rem; opacity:0.6; font-size:0.8rem;">
+            <p>&copy; 2025 Spirit Kafebar.</p>
+        </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
