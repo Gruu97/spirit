@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spirit Kafebar | Jerković</title>
-    <meta name="description" content="Komšijski kutak u Braće Jerković. Kraft pivo, specialty kafa i društvene igre.">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
@@ -13,17 +12,13 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">Spirit Kafebar</a>
-            
-            <button class="hamburger" aria-label="Meni">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-            </button>
-
+            <button class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
             <ul class="nav-links">
-                <li><a href="index.html">Početna</a></li> 
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="meni.html" class="btn-menu-link">📜 Meni</a></li>
                 <li><a href="pivo.html">Pivo</a></li>
                 <li><a href="kafa.html">Kafa</a></li>
                 <li><a href="igre.html">Igre</a></li>
-                <li><a href="meni.html" class="btn-menu-link">📜 Meni</a></li>
                 <li><a href="#kontakt" class="nav-cta">Rezerviši</a></li>
             </ul>
         </div>
@@ -31,7 +26,7 @@
 
     <header class="hero" style="background-image: url('https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1920&auto=format&fit=crop');">
         <div class="overlay"></div>
-        <div class="container hero-content hidden">
+        <div class="container hero-content reveal">
             <h1>Tvoj savršen potez: Vrhunsko pivo, kafa i igre.</h1>
             <p>Spirit Kafebar je tvoja oaza za beg od gradske buke u srcu Jerkovića.</p>
             <div class="hero-buttons">
@@ -43,88 +38,66 @@
 
     <section class="features">
         <div class="container">
-            <h2 class="section-title hidden">Naša Ponuda</h2>
+            <h2 class="section-title reveal">Naša Ponuda</h2>
             
-            <div class="zigzag-item hidden">
+            <div class="zigzag-item reveal">
                 <div class="zigzag-text">
                     <h3>Kraft Revolucija</h3>
                     <p>Zaboravi industrijski prosek. Na našim točilicama rotiramo najbolje domaće i strane zanatske pivare. IPA, Stout, Pale Ale – svaka čaša je avantura koju moraš da doživiš. Salto i Dogma su naši redovni gosti.</p>
                     <a href="pivo.html" class="text-link">Istraži Piva &rarr;</a>
                 </div>
                 <div class="zigzag-image">
-                    <img src="https://images.unsplash.com/photo-1575037614876-c38a4d44f5b8?q=80&w=800&auto=format&fit=crop" alt="Točeno kraft pivo">
+                    <img src="https://images.unsplash.com/photo-1575037614876-c38a4d44f5b8?q=80&w=800&auto=format&fit=crop" alt="Kraft pivo">
                 </div>
             </div>
 
-            <div class="zigzag-item hidden">
+            <div class="zigzag-item reveal">
                 <div class="zigzag-text">
                     <h3>Specialty Kafa</h3>
                     <p>Kafa je ritual, a ne samo kofein. Koristimo 100% Arabiku i premium blendove. Naši baristi su majstori ekstrakcije i latte arta. Probaj naš čuveni Cappuccino.</p>
                     <a href="kafa.html" class="text-link">Pogledaj Kafu &rarr;</a>
                 </div>
                 <div class="zigzag-image">
-                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop" alt="Barista pravi kafu">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop" alt="Kafa">
                 </div>
             </div>
 
-            <div class="zigzag-item hidden">
+            <div class="zigzag-item reveal">
                 <div class="zigzag-text">
                     <h3>Društvene Igre</h3>
                     <p>Preko 50 naslova na polici! Od Catan-a i Ticket to Ride-a do Exploding Kittens-a. Idealno za kišna popodneva ili večernja takmičenja sa ekipom.</p>
                     <a href="igre.html" class="text-link">Spisak Igara &rarr;</a>
                 </div>
                 <div class="zigzag-image">
-                    <img src="https://images.unsplash.com/photo-1606733847546-db8546099013?q=80&w=800&auto=format&fit=crop" alt="Igranje društvenih igara">
+                    <img src="https://images.unsplash.com/photo-1606733847546-db8546099013?q=80&w=800&auto=format&fit=crop" alt="Igre">
                 </div>
             </div>
         </div>
     </section>
 
-   <footer id="kontakt">
+    <footer id="kontakt">
         <div class="container footer-content">
-            
             <div class="footer-col">
                 <h4>Spirit Kafebar</h4>
                 <p>Malo zelenila. Malo mira. Puno duše.</p>
-                <div style="margin-top: 1rem; opacity: 0.7;">
-                    <p>Komšijski kutak u Zaplanjskoj.</p>
-                </div>
+                <div style="margin-top: 1rem; opacity: 0.7;"><p>Komšijski kutak u Zaplanjskoj.</p></div>
             </div>
-
             <div class="footer-col">
                 <h4>Radno Vreme</h4>
                 <ul style="opacity: 0.9;">
-                    <li style="margin-bottom: 5px;"><strong>Svaki dan:</strong> 09:00 - 22:00</li>
+                    <li><strong>Svaki dan:</strong> 09:00 - 22:00</li>
                 </ul>
-                <div class="socials" style="margin-top: 1.5rem;">
-                    <a href="https://instagram.com/spirit_kafebar" target="_blank" style="border-bottom: 1px solid var(--accent-color);">Prati nas na Instagramu →</a>
-                </div>
             </div>
-
             <div class="footer-col contact-info">
                 <h4>Pronađi nas</h4>
-                
                 <p>📍 Zaplanjska 86a, Beograd</p>
                 <p>📞 <a href="tel:+381647000520">+381 64 700 0520</a></p>
-                
                 <div class="map-container">
-                    <iframe 
-                        width="100%" 
-                        height="100%" 
-                        frameborder="0" 
-                        scrolling="no" 
-                        marginheight="0" 
-                        marginwidth="0" 
-                        src="https://maps.google.com/maps?q=Spirit+kafe+bar+Zaplanjska+86a+Beograd&t=&z=15&ie=UTF8&iwloc=&output=embed">
-                    </iframe>
+                    <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=Spirit+kafe+bar+Zaplanjska+86a+Beograd&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
                 </div>
             </div>
-
         </div>
-        
-        <div style="text-align:center; margin-top:4rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.1); opacity:0.6; font-size:0.8rem;">
-            <p>© 2025 Spirit Kafebar. Sva prava zadržana.</p>
-        </div>
+        <div style="text-align:center; margin-top:3rem; opacity:0.6;"><p>&copy; 2025 Spirit Kafebar.</p></div>
     </footer>
 
     <script src="script.js"></script>
