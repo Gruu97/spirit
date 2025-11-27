@@ -537,8 +537,8 @@ footer {
 /* 1. Glavni okvir sekcije */
 /* --- PROMENA: BELA POZADINA ZA RECENZIJE --- */
 .reviews-marquee {
-    padding: 8rem 0; /* Malo više prostora */
-    background-color: #FFFFFF; /* Čista bela boja */
+    padding: 4rem 0; /* Malo više prostora */
+    background-color: #2F5C63; /* Čista bela boja */
     position: relative;
     /* Suptilna senka koja pada na sekciju ispod */
     box-shadow: 0 0 50px rgba(0,0,0,0.05); 
