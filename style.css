@@ -101,117 +101,139 @@ ul { list-style: none; }
 .card-img { width: 100%; height: 300px; object-fit: cover; }
 .card-content { padding: 2rem; }
 
-/* --- NOVI FOOTER DIZAJN --- */
+/* --- NOVI CLEAN FOOTER DIZAJN --- */
 footer {
     background-color: var(--primary-color);
     color: var(--text-light);
-    padding: 5rem 0 2rem;
-    border-top: 5px solid var(--accent-color); /* Terakota linija na vrhu */
+    padding: 6rem 0 3rem; /* Više prostora gore */
+    border-top: 5px solid var(--accent-color);
 }
 
 .footer-content {
     display: grid;
-    /* Grid sada ima 4 kolone umesto 3 za puniji izgled */
-    grid-template-columns: 1.5fr 1fr 1fr 1.5fr; 
-    gap: 3rem;
+    /* Prilagođene širine kolona: Brend širi, Linkovi uži, Mapa šira */
+    grid-template-columns: 1.5fr 0.8fr 1.2fr 1.5fr; 
+    gap: 4rem; /* Povećan razmak između kolona */
     align-items: start;
 }
 
-/* 1. Brend Kolona */
+/* 1. Brend Kolona (Povećana) */
 .footer-logo {
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: 2.8rem; /* Mnogo veći logo */
     color: var(--text-light);
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1;
 }
 .footer-slogan {
     opacity: 0.8;
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem; /* Veći tekst slogana */
     line-height: 1.6;
+    font-weight: 300;
 }
 .social-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(255,255,255,0.1);
-    padding: 10px 20px;
+    display: inline-block;
+    background: transparent;
+    padding: 12px 30px;
     border-radius: 50px;
     font-weight: 600;
     font-size: 0.9rem;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
     transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 .social-btn:hover {
     background: var(--accent-color);
-    border-color: var(--accent-color);
-    transform: translateY(-3px);
+    color: white;
 }
 
-/* 2. Naslovi u footeru */
+/* 2. Naslovi kolona */
 .footer-col h4 {
-    color: var(--accent-color); /* Terakota boja za naslove */
-    font-size: 1.2rem;
+    color: var(--accent-color);
+    font-size: 1.1rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
     font-weight: 700;
+    opacity: 0.9;
 }
 
-/* 3. Linkovi */
-.footer-links li { margin-bottom: 0.8rem; }
+/* 3. Linkovi sa Animacijom */
+.footer-links li { margin-bottom: 1rem; }
 .footer-links a {
-    opacity: 0.7;
-    transition: 0.3s;
+    font-size: 1.1rem;
+    opacity: 0.8;
     display: inline-block;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
 }
+/* Efekt na hover: pomeranje + boja */
 .footer-links a:hover {
     opacity: 1;
     color: var(--accent-color);
-    transform: translateX(5px); /* Pomeranje desno na hover */
+    transform: translateX(10px); /* Pomeri desno */
+    padding-left: 5px;
 }
 
-/* 4. Kontakt Lista */
+/* 4. Info Kolona (Bez ikonica, čisto) */
 .contact-list li {
-    margin-bottom: 1.2rem;
-    font-size: 0.95rem;
-    opacity: 0.9;
-    line-height: 1.6;
+    margin-bottom: 2rem; /* Veliki razmak između stavki */
+    display: flex;
+    flex-direction: column; /* Labela gore, vrednost dole */
+    gap: 5px;
+}
+.info-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.5; /* Sivi tekst za labelu */
+}
+.info-value {
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
-/* 5. Mapa (Ostaje ista ali malo veća) */
+/* 5. Mapa (Povećana) */
 .map-container {
-    height: 180px;
-    border-radius: 12px;
+    height: 280px; /* Znatno veća mapa */
+    border-radius: 16px;
     border: 2px solid var(--accent-color);
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+.map-container:hover {
+    transform: scale(1.02); /* Blagi zum na hover */
 }
 
 /* 6. Footer Bottom */
 .footer-bottom {
     text-align: center;
-    margin-top: 4rem;
+    margin-top: 5rem;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.85rem;
-    opacity: 0.6;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.9rem;
+    opacity: 0.4;
 }
 
-/* RESPONSIVE ZA FOOTER */
-@media (max-width: 900px) {
+/* RESPONSIVE */
+@media (max-width: 1024px) {
     .footer-content {
-        grid-template-columns: 1fr 1fr; /* 2 kolone na tabletu */
+        grid-template-columns: 1fr 1fr; /* 2 kolone */
+        gap: 3rem;
     }
 }
-
 @media (max-width: 600px) {
     .footer-content {
-        grid-template-columns: 1fr; /* 1 kolona na mobilnom */
+        grid-template-columns: 1fr; /* 1 kolona */
         text-align: center;
     }
-    .footer-links a:hover { transform: none; }
-    .social-btn { width: 100%; justify-content: center; }
+    .footer-links a:hover { transform: none; padding: 0; }
+    .contact-list li { align-items: center; }
 }
 
 /* --- 8. MOBILNI PRIKAZ --- */
