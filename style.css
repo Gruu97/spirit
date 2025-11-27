@@ -71,11 +71,33 @@ ul { list-style: none; }
 
 /* --- 5. CIK-CAK (ZIG-ZAG) & FEATURES --- */
 .features, .vibe-section { padding: 8rem 0; overflow: hidden; }
+/* --- POPRAVLJENO CENTRIRANJE NASLOVA --- */
 .section-title {
-    font-size: 3rem; text-align: center; margin-bottom: 6rem; position: relative;
-    display: inline-block; left: 50%; transform: translateX(-50%); color: var(--primary-color);
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    display: inline-block; /* Da bi linija ispod bila vezana za širinu teksta */
+    /* UKLONILI SMO left i transform jer su pravili problem */
+    color: var(--primary-color);
+    line-height: 1.2;
 }
-.section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--accent-color); margin: 20px auto 0; border-radius: 2px; }
+
+/* Dekorativna linija ispod naslova */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px; /* Malo šira linija */
+    height: 4px;
+    background-color: var(--accent-color); /* Terakota boja */
+    margin: 20px auto 0; /* 'auto' ovde osigurava da je linija TAČNO na sredini */
+    border-radius: 2px;
+}
+
+/* Osiguravamo da je roditeljski kontejner centriran */
+.reveal {
+    text-align: center; /* Ovo centrira sve unutar sekcije */
+}
 
 .zigzag-item { display: flex; align-items: center; justify-content: space-between; gap: 5rem; margin-bottom: 8rem; }
 .zigzag-item:nth-child(even) { flex-direction: row-reverse; }
