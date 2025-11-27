@@ -206,8 +206,8 @@ ul { list-style: none; }
     position: absolute;
     top: 10%;
     right: -5%;
-    width: 600px;
-    height: 600px;
+    width: 800px;
+    height: 800px;
     background-color: var(--primary-color);
     opacity: 0.05; /* Veoma providno */
     border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; /* Pravi nepravilan krug */
