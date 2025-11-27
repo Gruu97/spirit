@@ -101,100 +101,111 @@ ul { list-style: none; }
 .card-img { width: 100%; height: 300px; object-fit: cover; }
 .card-content { padding: 2rem; }
 
-/* --- PREMIUM FOOTER DIZAJN --- */
+/* =========================================
+   NOVI PREMIUM FOOTER (FINALNA VERZIJA)
+========================================= */
 
+/* 1. RESETOVANJE GLAVNOG TAGA */
 footer {
-    display: flex;
-    flex-direction: column;
-    margin-top: 0; /* Uklanjamo margine jer je mapa široka */
+    padding: 0 !important; /* Uklanja stari padding */
+    background-color: transparent !important; /* Uklanja staru zelenu pozadinu */
+    color: var(--text-dark); /* Vraća tamnu boju teksta za bež pozadinu */
+    margin-top: 0;
+    width: 100%;
 }
 
-/* 1. MAPA (Full Width Strip) */
+/* 2. MAPA (TRAKA PREKO CELOG EKRANA) */
 .footer-map {
     width: 100%;
-    height: 400px; /* Visoka, impresivna mapa */
-    border-bottom: 10px solid var(--primary-color); /* Granica između mape i info dela */
+    height: 400px; /* Visina mape */
+    display: block;
+    border-bottom: 8px solid var(--primary-color); /* Linija ispod mape */
 }
 
 .footer-map iframe {
     width: 100%;
     height: 100%;
     border: 0;
-    filter: grayscale(10%) contrast(1.1); /* Blagi filter za bolji izgled */
+    display: block;
+    filter: grayscale(10%) contrast(1.1);
 }
 
-/* 2. DONJI INFO DEO (Bež pozadina) */
+/* 3. DONJA INFO SEKCIJA (BEŽ POZADINA) */
 .footer-info-bar {
-    background-color: var(--bg-body); /* Svetla bež pozadina */
-    color: var(--text-dark);          /* Tamni tekst */
-    padding: 4rem 0 2rem;
+    background-color: #F2EBE0; /* Tvoja bež boja */
+    padding: 0 0 3rem 0;
+    position: relative;
+    width: 100%;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Tri jednake kolone */
+    grid-template-columns: 1fr 1fr 1fr; /* 3 Kolone */
     gap: 2rem;
-    align-items: center; /* Poravnanje po sredini */
+    padding-top: 4rem; /* Mesto za karticu koja "lebdi" */
+    align-items: start;
 }
 
-.footer-col {
-    text-align: center;
-}
-
-/* 3. TIPOGRAFIJA */
-.footer-col h4 {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-}
-
-.left-col ul li {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid rgba(47, 92, 99, 0.1);
-    padding: 8px 0;
-    font-size: 0.95rem;
-    max-width: 300px;
-    margin: 0 auto; /* Centriranje liste */
-}
-
-/* 4. CENTRALNA KARTICA (Ona tamna u sredini) */
+/* 4. SREDNJA KOLONA - LEBDEĆA KARTICA (ADRESA) */
 .center-col {
     position: relative;
-    /* Negativna margina podiže karticu da malo pređe preko mape - jako moderan efekat */
-    margin-top: -8rem; 
+    margin-top: -8rem; /* OVO PODIŽE KARTICU PREKO MAPE */
+    z-index: 10;
 }
 
 .brand-card {
-    background-color: var(--primary-color);
-    color: var(--text-light);
+    background-color: var(--primary-color); /* Zelena kutija */
+    color: #FAFAF5; /* Beli tekst unutra */
     padding: 3rem 2rem;
     border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
 }
 
-.footer-icon { font-size: 2rem; margin-bottom: 0.5rem; }
-.brand-card h3 { color: var(--accent-color); font-size: 1.5rem; margin-bottom: 0; }
-.brand-card p { opacity: 0.9; font-size: 1.1rem; line-height: 1.6; }
+.footer-icon { font-size: 2.5rem; }
+.brand-card h3 { color: var(--accent-color); margin-bottom: 0; font-size: 1.5rem; }
+.brand-card p { opacity: 0.9; font-size: 1.1rem; line-height: 1.6; color: #FAFAF5; }
 
 .btn-small {
-    margin-top: 1rem;
-    font-size: 0.8rem;
+    margin-top: 10px;
+    font-size: 0.85rem;
     text-transform: uppercase;
     border: 1px solid var(--accent-color);
-    padding: 8px 16px;
+    padding: 10px 20px;
     border-radius: 50px;
     color: var(--accent-color);
     transition: 0.3s;
+    background: transparent;
 }
 .btn-small:hover { background: var(--accent-color); color: white; }
 
-/* 5. DESNA KOLONA (Dugmići) */
+/* 5. LEVA I DESNA KOLONA (TEKST) */
+.footer-col h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Stil za liste u levoj koloni */
+.left-col ul { list-style: none; padding: 0; }
+.left-col li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(47, 92, 99, 0.15); /* Tanka linija */
+    padding: 12px 0;
+    font-size: 0.95rem;
+    color: #333;
+}
+.left-col span { opacity: 0.8; }
+.left-col strong { color: var(--primary-color); }
+
+/* Desna kolona dugmići */
 .contact-phones {
     display: flex;
     flex-direction: column;
@@ -203,57 +214,61 @@ footer {
     margin-bottom: 2rem;
 }
 
-.phone-btn, .insta-btn {
-    display: inline-block;
-    width: 220px;
-    padding: 12px;
-    border-radius: 50px;
-    font-weight: 600;
-    text-align: center;
-    transition: 0.3s;
-}
-
 .phone-btn {
     background-color: var(--primary-color);
     color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: 0.3s;
 }
-.phone-btn:hover { background-color: #1a363a; transform: translateY(-2px); }
+.phone-btn:hover { background-color: #1a363a; transform: translateY(-3px); }
 
 .insta-btn {
-    background-color: transparent;
     border: 2px solid var(--primary-color);
     color: var(--primary-color);
-}
-.insta-btn:hover { background-color: var(--primary-color); color: white; transform: translateY(-2px); }
-
-.quick-links a {
+    padding: 12px 30px;
+    border-radius: 50px;
     font-weight: 600;
-    color: var(--accent-color);
-    font-size: 0.9rem;
-    margin: 0 5px;
+    transition: 0.3s;
 }
+.insta-btn:hover { background: var(--primary-color); color: white; transform: translateY(-3px); }
+
+.quick-links { text-align: center; font-weight: 600; color: var(--accent-color); }
+.quick-links a { margin: 0 5px; }
 
 /* 6. COPYRIGHT */
 .copyright {
     text-align: center;
     margin-top: 4rem;
-    opacity: 0.5;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    opacity: 0.6;
     font-size: 0.85rem;
 }
 
-/* RESPONSIVE */
+/* --- RESPONSIVE ZA MOBILNI --- */
 @media (max-width: 900px) {
     .footer-grid {
         grid-template-columns: 1fr; /* Sve jedna ispod druge */
-        gap: 3rem;
+        gap: 4rem;
+        padding-top: 2rem;
     }
-    
+
     .center-col {
-        margin-top: 0; /* Ukidamo preklapanje na mobilnom */
-        order: -1; /* Kartica sa adresom ide prva na telefonu */
+        margin-top: 0; /* Ukidamo lebdenje na mobilnom */
+        order: -1; /* Adresa ide prva */
+    }
+
+    .brand-card {
+        margin: 0 1rem; /* Margina sa strane na mobilnom */
     }
     
-    .footer-map { height: 250px; }
+    .footer-map {
+        height: 250px; /* Manja mapa na mobilnom */
+    }
 }
 
 /* --- 8. MOBILNI PRIKAZ --- */
