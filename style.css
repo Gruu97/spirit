@@ -15,7 +15,8 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: var(--bg-body);
+    /* Umesto običnog background-color */
+    background: radial-gradient(circle at top center, #FAFAF5 0%, #F2EBE0 80%);
     color: var(--text-dark);
     font-family: var(--font-body);
     line-height: 1.7;
@@ -123,6 +124,49 @@ ul { list-style: none; }
 .card-img { width: 100%; height: 300px; object-fit: cover; }
 .card-content { padding: 2rem; }
 
+/* --- PROMENA: DEKORATIVNI OKVIR IZA SLIKE --- */
+
+/* Ovo omogućava da pozicioniramo okvir */
+.zigzag-image {
+    flex: 1.2;
+    position: relative;
+    z-index: 1; /* Slika je ispred */
+}
+
+/* Kreiramo okvir pomoću pseudo-elementa ::before */
+.zigzag-image::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--accent-color); /* Terakota boja okvira */
+    border-radius: 24px; /* Isto zaobljenje kao slika */
+    z-index: -1; /* Ide iza slike */
+    
+    /* Pomeramo ga malo gore i levo */
+    top: -20px;
+    left: -20px;
+    
+    transition: all 0.5s ease;
+}
+
+/* Za parne elemente (gde je slika desno), okvir ide desno */
+.zigzag-item:nth-child(even) .zigzag-image::before {
+    top: -20px;
+    left: auto; /* Poništavamo levo */
+    right: -20px; /* Pomeramo desno */
+    border-color: var(--primary-color); /* Menjamo boju u zelenu za dinamiku */
+}
+
+/* Animacija na hover - okvir se malo pomeri */
+.zigzag-item:hover .zigzag-image::before {
+    top: -10px;
+    left: -10px;
+}
+.zigzag-item:nth-child(even):hover .zigzag-image::before {
+    top: -10px;
+    right: -10px;
+}
 /* =========================================
    NOVI PREMIUM FOOTER (FINALNA VERZIJA)
 ========================================= */
@@ -447,16 +491,21 @@ footer {
 ========================================= */
 
 /* 1. Glavni okvir sekcije */
+/* --- PROMENA: BELA POZADINA ZA RECENZIJE --- */
 .reviews-marquee {
-    padding: 6rem 0;
-    background-color: var(--bg-body); /* Bež pozadina */
-    overflow: hidden; /* Sakriva sve što izlazi van ekrana levo i desno */
-    width: 100%;
+    padding: 8rem 0; /* Malo više prostora */
+    background-color: #FFFFFF; /* Čista bela boja */
+    position: relative;
+    /* Suptilna senka koja pada na sekciju ispod */
+    box-shadow: 0 0 50px rgba(0,0,0,0.05); 
+    z-index: 2; /* Da bude iznad footera vizuelno */
 }
 
-.reviews-marquee h2 {
-    margin-bottom: 4rem;
-    text-align: center;
+/* Da kartice ostanu bele ali sa ivicom da se vide na beloj pozadini */
+.review-card-scroll {
+    background: #F9F9F9; /* Jako svetlo siva, skoro bela */
+    border: 1px solid rgba(47, 92, 99, 0.1); /* Tanka zelena linija */
+    /* ... ostalo ostaje isto ... */
 }
 
 /* 2. Kontejner za traku */
