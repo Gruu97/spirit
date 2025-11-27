@@ -321,3 +321,102 @@ footer {
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
+
+/* --- STIL ZA RECENZIJE --- */
+.reviews-marquee {
+    padding: 6rem 0;
+    background-color: var(--bg-body);
+    overflow: hidden;
+}
+
+.marquee-wrapper {
+    width: 100%;
+    position: relative;
+    padding: 2rem 0;
+    /* Fade efekat sa strane */
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.marquee-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    /* Sporija animacija (60s) da ljudi stignu da pročitaju */
+    animation: scroll 60s linear infinite; 
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+.review-card-scroll {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    width: 380px; /* Širina kartice */
+    box-shadow: 0 10px 30px rgba(47, 92, 99, 0.08);
+    border: 1px solid rgba(47, 92, 99, 0.05);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review-card-scroll p {
+    font-style: italic;
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    /* Ograničava tekst na 4 reda da kartice budu iste visine */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* NOVO: Footer unutar kartice */
+.review-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+}
+
+.author {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+/* Dugme za Google Link */
+.google-link {
+    font-size: 0.8rem;
+    color: #666;
+    text-decoration: none;
+    background: #f9f9f9;
+    padding: 5px 12px;
+    border-radius: 20px;
+    transition: 0.3s;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.google-link:hover {
+    background: #e8f0fe;
+    color: #4285F4; /* Google plava */
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Pomeraj za pola jer je dupliran sadržaj */
+}
+
+@media (max-width: 768px) {
+    .review-card-scroll { width: 300px; padding: 1.5rem; }
+}
