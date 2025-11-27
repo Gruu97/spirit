@@ -420,3 +420,119 @@ footer {
 @media (max-width: 768px) {
     .review-card-scroll { width: 300px; padding: 1.5rem; }
 }
+/* =========================================
+   INFINITE SCROLL RECENZIJE (POPRAVKA)
+========================================= */
+
+/* 1. Glavni okvir sekcije */
+.reviews-marquee {
+    padding: 6rem 0;
+    background-color: var(--bg-body); /* Bež pozadina */
+    overflow: hidden; /* Sakriva sve što izlazi van ekrana levo i desno */
+    width: 100%;
+}
+
+.reviews-marquee h2 {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+/* 2. Kontejner za traku */
+.marquee-wrapper {
+    width: 100%;
+    position: relative;
+    padding: 2rem 0;
+    /* Fade efekat sa strane da lepše izgleda */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* 3. Traka koja se kreće (Flexbox je ključan ovde) */
+.marquee-track {
+    display: flex; /* OVO JE BITNO: Ređa elemente u red */
+    gap: 2rem;     /* Razmak između kartica */
+    width: max-content; /* Širina je onolika koliko ima kartica */
+    animation: scroll 60s linear infinite; /* Animacija kretanja */
+}
+
+/* Pauziraj kad se pređe mišem */
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+/* 4. Izgled Kartice */
+.review-card-scroll {
+    background: #fff; /* Bela pozadina kartice */
+    border-radius: 16px;
+    padding: 2rem;
+    width: 380px; /* Fiksna širina da sve budu iste */
+    box-shadow: 0 10px 30px rgba(47, 92, 99, 0.08);
+    border: 1px solid rgba(47, 92, 99, 0.05);
+    flex-shrink: 0; /* Ne dozvoljava kartici da se skupi */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Stil teksta u kartici */
+.review-card-scroll p {
+    font-style: italic;
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.stars {
+    color: #F4B400; /* Zlatna boja zvezdica */
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Footer kartice (Autor i Link) */
+.review-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+}
+
+.author {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+/* Dugme za Google Link */
+.google-link {
+    font-size: 0.8rem;
+    color: #666;
+    text-decoration: none;
+    background: #f9f9f9;
+    padding: 5px 12px;
+    border-radius: 20px;
+    transition: 0.3s;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.google-link:hover {
+    background: #e8f0fe;
+    color: #4285F4;
+}
+
+/* 5. Animacija */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Pomeri za 50% jer je sadržaj dupliran */
+}
+
+/* Mobilni */
+@media (max-width: 768px) {
+    .review-card-scroll { width: 300px; padding: 1.5rem; }
+    .marquee-track { gap: 1rem; }
+}
