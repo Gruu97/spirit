@@ -1,4 +1,6 @@
-/* --- 1. DEFINICIJE I VARIJABLE --- */
+/* =========================================
+   1. DEFINICIJE I OSNOVA
+========================================= */
 :root {
     --primary-color: #2F5C63; /* Petrol Zelena */
     --bg-body: #F2EBE0;       /* Topla Bež */
@@ -21,6 +23,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Generalni stilovi za naslove (Zeleni po defaultu) */
 h1, h2, h3, h4 {
     font-family: var(--font-heading);
     color: var(--primary-color);
@@ -32,7 +35,9 @@ a { text-decoration: none; transition: 0.3s; color: inherit; }
 ul { list-style: none; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-/* --- 2. NAVIGACIJA (Transparent -> Solid) --- */
+/* =========================================
+   2. NAVIGACIJA (Transparent -> Solid)
+========================================= */
 .navbar {
     background: transparent;
     padding: 1.5rem 0;
@@ -52,27 +57,19 @@ ul { list-style: none; }
     color: rgba(255, 255, 255, 0.95); font-size: 0.95rem; text-transform: uppercase; 
     letter-spacing: 1px; font-weight: 500; text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
-./* --- DUGME MENI U NAVIGACIJI --- */
-.btn-menu-link {
-    border: 1px solid rgba(255, 255, 255, 0.6); /* Svetli okvir */
-    padding: 6px 16px;
-    border-radius: 50px;
-    color: var(--text-light) !important; /* OBAVEZNO: Bela/Bež boja teksta */
-    font-weight: 600;
-    transition: 0.3s;
-    background: transparent; /* Providna pozadina u startu */
+.btn-menu-link { 
+    border: 1px solid rgba(255,255,255,0.6); padding: 6px 16px; border-radius: 50px; 
+    color: #fff !important; font-weight: 600; transition: 0.3s; background: transparent;
 }
+.btn-menu-link:hover { background: #fff; color: var(--primary-color) !important; border-color: #fff; }
+.nav-cta { background-color: var(--accent-color); padding: 0.6rem 1.4rem; border-radius: 50px; color: white !important; }
 
-.btn-menu-link:hover {
-    background: var(--text-light); /* Bela pozadina na hover */
-    color: var(--primary-color) !important; /* Zeleni tekst na hover */
-    border-color: var(--text-light);
-}
-
-/* --- 3. HERO SEKCIJA --- */
+/* =========================================
+   3. HERO SEKCIJA (POPRAVLJENA BOJA TEKSTA)
+========================================= */
 .hero, .page-header {
     height: 85vh; display: flex; align-items: center; justify-content: center; text-align: center;
-    position: relative; background-size: cover; background-position: center; color: var(--text-light);
+    position: relative; background-size: cover; background-position: center; 
 }
 .page-header { height: 50vh; margin-bottom: 4rem; }
 .overlay {
@@ -80,17 +77,29 @@ ul { list-style: none; }
     background: linear-gradient(to bottom, rgba(47, 92, 99, 0.4), rgba(47, 92, 99, 0.9));
 }
 .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; margin: 0 auto; }
-.hero h1 { font-size: 3.8rem; margin-bottom: 1.5rem; color: #fff; text-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-.hero p { font-size: 1.3rem; margin-bottom: 2.5rem; opacity: 1; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
 
-/* DUGMAD */
+/* OVO REŠAVA PROBLEM: Forsiramo belu boju u hero sekciji */
+.hero-content h1 { 
+    font-size: 3.8rem; margin-bottom: 1.5rem; 
+    color: #FFFFFF !important; /* <--- OVO JE BITNO */
+    text-shadow: 0 5px 15px rgba(0,0,0,0.6); 
+}
+.hero-content p { 
+    font-size: 1.3rem; margin-bottom: 2.5rem; opacity: 1; 
+    color: #F5F5F5 !important; /* <--- OVO JE BITNO */
+    text-shadow: 0 2px 5px rgba(0,0,0,0.6); 
+}
+
+/* Dugmad u Hero sekciji */
 .btn { display: inline-block; padding: 1rem 2.2rem; border-radius: 50px; font-weight: 600; text-transform: uppercase; margin: 10px; cursor: pointer; transition: 0.4s var(--transition-curve); }
 .btn-primary { background-color: var(--accent-color); color: white; border: 2px solid var(--accent-color); }
 .btn-primary:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(200, 121, 97, 0.4); }
 .btn-outline { background: transparent; border: 2px solid white; color: white; }
 .btn-outline:hover { background: white; color: var(--primary-color); transform: scale(1.05); }
 
-/* --- 4. CIK-CAK (ZIG-ZAG) & FEATURES --- */
+/* =========================================
+   4. CIK-CAK & FEATURES (POPRAVLJENO CENTRIRANJE)
+========================================= */
 .features { padding: 8rem 0; overflow: hidden; position: relative; z-index: 1; }
 
 /* Talas u pozadini */
@@ -101,12 +110,165 @@ ul { list-style: none; }
     z-index: -1; transform: scaleY(1.5) translateY(-20%); pointer-events: none;
 }
 
+/* OVO REŠAVA PROBLEM CENTRIRANJA NASLOVA */
 .section-title {
-    font-size: 3rem; text-align: center; margin-bottom: 6rem; position: relative;
-    display: inline-block; left: 50%; transform: translateX(-50%); color: var(--primary-color);
+    font-size: 3rem; 
+    text-align: center; /* Klasično centriranje */
+    margin: 0 auto 6rem auto; /* Auto margine levo i desno */
+    display: block; /* Zauzima celu širinu da bi text-align radio */
+    color: var(--primary-color);
+    position: relative;
+    z-index: 2;
 }
-.section-title::after { content: ''; display: block; width: 80px; height: 4px; background: var(--accent-color); margin: 20px auto 0; border-radius: 2px; }
+.section-title::after { 
+    content: ''; display: block; width: 80px; height: 4px; 
+    background: var(--accent-color); 
+    margin: 20px auto 0; /* Auto margina centrira liniju */
+    border-radius: 2px; 
+}
 
+.zigzag-item { display: flex; align-items: center; justify-content: space-between; gap: 5rem; margin-bottom: 8rem; }
+.zigzag-item:nth-child(even) { flex-direction: row-reverse; }
+
+.zigzag-text { flex: 1; padding: 2rem; }
+.zigzag-text h3 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+.zigzag-text p { font-size: 1.15rem; color: #444; margin-bottom: 2.5rem; }
+
+.zigzag-image { flex: 1.2; position: relative; z-index: 1; }
+.zigzag-image img {
+    width: 100%; height: 600px; object-fit: cover; border-radius: 24px; box-shadow: var(--shadow-soft);
+    transition: transform 0.6s var(--transition-curve);
+}
+.zigzag-image::before {
+    content: ''; position: absolute; width: 100%; height: 100%;
+    border: 3px solid var(--accent-color); border-radius: 24px; z-index: -1;
+    top: -20px; left: -20px; transition: all 0.5s ease;
+}
+.zigzag-item:nth-child(even) .zigzag-image::before { left: auto; right: -20px; border-color: var(--primary-color); }
+.zigzag-image:hover img { transform: scale(1.02); }
+.text-link { display: inline-block; color: var(--primary-color); font-weight: 700; font-size: 1.1rem; border-bottom: 2px solid var(--accent-color); padding-bottom: 5px; }
+
+/* =========================================
+   5. RECENZIJE (TAMNO ZELENA)
+========================================= */
+.reviews-marquee {
+    padding: 3rem 0 5rem;
+    background-color: var(--primary-color); /* Zelena pozadina */
+    position: relative; overflow: hidden; width: 100%;
+    box-shadow: inset 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Forsiramo narandžastu boju za naslov recenzija */
+.reviews-marquee .section-title { color: var(--accent-color) !important; }
+.reviews-marquee .section-title::after { background-color: var(--accent-color); }
+
+.marquee-wrapper {
+    width: 100%; position: relative; padding: 1rem 0;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+.marquee-track { display: flex; gap: 2rem; width: max-content; animation: scroll 60s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+
+.review-card-scroll {
+    background: #fff; border-radius: 16px; padding: 2rem; width: 380px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0; display: flex; flex-direction: column; justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+.review-card-scroll:hover { transform: translateY(-5px); }
+.review-card-scroll p { font-style: italic; color: #444; font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem; }
+.review-card-scroll .stars { color: #F4B400; margin-bottom: 1rem; font-size: 1.2rem; }
+.review-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; border-top: 1px solid #f0f0f0; padding-top: 15px; }
+.author { font-weight: 700; color: var(--primary-color); font-size: 0.9rem; }
+.google-link {
+    font-size: 0.8rem; color: #666; text-decoration: none; background: #f5f5f5;
+    padding: 5px 12px; border-radius: 20px; transition: 0.3s; font-weight: 600;
+    display: flex; align-items: center; gap: 5px;
+}
+.google-link:hover { background: #e8f0fe; color: #4285F4; }
+
+@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* =========================================
+   6. FOOTER (PREMIUM)
+========================================= */
+footer { padding: 0 !important; background-color: transparent !important; color: var(--text-dark); margin-top: 0; width: 100%; }
+.footer-map { width: 100%; height: 400px; display: block; border-bottom: 8px solid var(--primary-color); }
+.footer-map iframe { width: 100%; height: 100%; border: 0; display: block; filter: grayscale(10%) contrast(1.1); }
+
+.footer-info-bar { background-color: #F2EBE0; padding: 0 0 3rem 0; position: relative; width: 100%; }
+.footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; padding-top: 4rem; align-items: start; }
+
+.center-col { position: relative; margin-top: -8rem; z-index: 10; }
+.brand-card {
+    background-color: var(--primary-color); color: #FAFAF5; padding: 3rem 2rem; border-radius: 12px;
+    text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.3); display: flex; flex-direction: column; align-items: center; gap: 1rem;
+}
+.footer-icon { font-size: 2.5rem; }
+.brand-card h3 { color: var(--accent-color); margin-bottom: 0; font-size: 1.5rem; }
+.brand-card p { opacity: 0.9; font-size: 1.1rem; line-height: 1.6; color: #FAFAF5; }
+
+.btn-small {
+    margin-top: 10px; font-size: 0.85rem; text-transform: uppercase; border: 1px solid var(--accent-color);
+    padding: 10px 20px; border-radius: 50px; color: var(--accent-color); transition: 0.3s; background: transparent;
+}
+.btn-small:hover { background: var(--accent-color); color: white; }
+
+.footer-col h4 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary-color); margin-bottom: 1.5rem; text-align: center; }
+.left-col ul { list-style: none; padding: 0; }
+.left-col li { display: flex; justify-content: space-between; border-bottom: 1px solid rgba(47, 92, 99, 0.15); padding: 12px 0; font-size: 0.95rem; color: #333; }
+.left-col span { opacity: 0.8; }
+.left-col strong { color: var(--primary-color); }
+
+.contact-phones { display: flex; flex-direction: column; gap: 15px; align-items: center; margin-bottom: 2rem; }
+.phone-btn { background-color: var(--primary-color); color: white; padding: 12px 30px; border-radius: 50px; font-weight: 600; display: inline-block; transition: 0.3s; }
+.phone-btn:hover { background-color: #1a363a; transform: translateY(-3px); }
+.insta-btn { border: 2px solid var(--primary-color); color: var(--primary-color); padding: 12px 30px; border-radius: 50px; font-weight: 600; transition: 0.3s; }
+.insta-btn:hover { background: var(--primary-color); color: white; transform: translateY(-3px); }
+.quick-links { text-align: center; font-weight: 600; color: var(--accent-color); }
+.quick-links a { margin: 0 5px; }
+.copyright { text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.1); opacity: 0.6; font-size: 0.85rem; }
+
+/* =========================================
+   7. ANIMACIJE (SCROLL REVEAL)
+========================================= */
+.reveal {
+    opacity: 0; filter: blur(10px); transform: scale(0.95) translateY(30px); transition: all 1s var(--transition-curve);
+}
+.reveal.active { opacity: 1; filter: blur(0); transform: scale(1) translateY(0); }
+
+/* =========================================
+   8. MOBILNI I RESPONSIVE
+========================================= */
+.hamburger { display: none; cursor: pointer; background: none; border: none; }
+.bar { display: block; width: 25px; height: 3px; margin: 5px auto; background-color: var(--text-light); transition: 0.3s; }
+
+@media (max-width: 900px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 4rem; padding-top: 2rem; }
+    .center-col { margin-top: 0; order: -1; }
+    .brand-card { margin: 0 1rem; }
+    .footer-map { height: 250px; }
+    .zigzag-item, .zigzag-item:nth-child(even) { flex-direction: column; gap: 2rem; margin-bottom: 5rem; }
+    .zigzag-image { width: 100%; order: -1; }
+    .zigzag-image img { height: 350px; }
+    .zigzag-text { text-align: center; }
+    .hero h1 { font-size: 2.5rem; }
+    
+    /* Mobilni meni */
+    .hamburger { display: block; position: fixed; top: 20px; right: 20px; z-index: 9999; }
+    .hamburger .bar { background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    
+    .nav-links {
+        position: fixed; top: 0; right: 0; height: 100vh; width: 100%;
+        background-color: var(--primary-color); flex-direction: column; justify-content: center;
+        gap: 2rem; transform: translateX(100%); transition: transform 0.4s ease-in-out; z-index: 9990;
+    }
+    .nav-links.active { transform: translateX(0); }
+}
 .zigzag-item { display: flex; align-items: center; justify-content: space-between; gap: 5rem; margin-bottom: 8rem; }
 .zigzag-item:nth-child(even) { flex-direction: row-reverse; }
 
