@@ -1,4 +1,16 @@
-// 1. HAMBURGER MENI (Mobilni)
+// --- 1. NAVBAR SCROLL EFEKAT ---
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+    // Ako smo skrolovali više od 100 piksela, dodaj zelenu boju
+    if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// --- 2. HAMBURGER MENI (MOBILNI) ---
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-links");
 
@@ -15,9 +27,9 @@ if (hamburger && navMenu) {
     }));
 }
 
-// 2. NOVA ANIMACIJA (Rešava problem "Blank page")
+// --- 3. ANIMACIJE (SCROLL REVEAL) ---
 const observerOptions = {
-    threshold: 0.1 // Aktivira se čim se vidi 10% elementa
+    threshold: 0.1 // Animacija kreće kad je 10% elementa vidljivo
 };
 
 const observer = new IntersectionObserver((entries) => {
