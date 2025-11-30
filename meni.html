@@ -5,19 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cenovnik | Spirit Kafebar</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        .menu-section {
+            padding: 5rem 0;
+            background-color: var(--bg-body);
+        }
+        
+        /* Masonry Grid - Ovo pravi da se kartice slažu kao cigle */
+        .menu-masonry {
+            column-count: 1; /* Mobilni: 1 kolona */
+            column-gap: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .menu-masonry { column-count: 2; } /* Tablet/Desktop: 2 kolone */
+        }
+
+        .menu-category-card {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 2rem; /* Razmak između kartica vertikalno */
+            border: 1px solid rgba(47, 92, 99, 0.05);
+            break-inside: avoid; /* Sprečava da se kartica prelom na pola kolone */
+            transition: transform 0.3s ease;
+        }
+
+        .menu-category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(47, 92, 99, 0.15);
+        }
+
+        .cat-title {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(200, 121, 97, 0.2); /* Terakota linija */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cat-icon { font-size: 1.5rem; opacity: 0.8; }
+
+        .menu-item {
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-size: 1.05rem;
+        }
+
+        .item-name { font-weight: 600; color: var(--text-dark); }
+        
+        .item-dots {
+            flex-grow: 1;
+            border-bottom: 1px dotted #ccc;
+            margin: 0 10px;
+            opacity: 0.5;
+        }
+
+        .item-price {
+            font-weight: 700;
+            color: var(--accent-color);
+            white-space: nowrap;
+        }
+
+        .item-desc {
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 2px;
+            padding-left: 10px;
+            border-left: 2px solid rgba(47, 92, 99, 0.1);
+        }
+    </style>
 </head>
 <body>
+
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">Spirit Kafebar</a>
             <button class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
-           <ul class="nav-links">
+            <ul class="nav-links">
                 <li><a href="index.html">Početna</a></li>
                 <li><a href="pivo.html">Pivo</a></li>
-                <li><a href="kafa.html" style="color:var(--accent-color)">Kafa</a></li>
+                <li><a href="kafa.html">Kafa</a></li>
                 <li><a href="igre.html">Igre</a></li>
-                <li><a href="meni.html" class="btn-menu-link">📜 Meni</a></li>
+                <li><a href="meni.html" class="btn-menu-link" style="background:var(--light); color:var(--primary-color);">📜 Meni</a></li>
                 <li><a href="#kontakt" class="nav-cta">Rezerviši</a></li>
             </ul>
         </div>
@@ -25,34 +110,143 @@
 
     <header class="page-header" style="height:40vh; background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1920&auto=format&fit=crop');">
         <div class="overlay"></div>
-        <div class="container hero-content hidden">
+        <div class="container hero-content reveal">
             <h1>Naša Ponuda</h1>
+            <p>Kompletan cenovnik pića i napitaka</p>
         </div>
     </header>
 
-    <div class="container">
-        <div class="menu-wrapper hidden">
-            <h3 class="menu-category-title">☕ Kafa</h3>
-            <div class="menu-row"><span class="menu-name">Espresso</span><span class="dots"></span><span class="menu-price">160</span></div>
-            <div class="menu-row"><span class="menu-name">Espresso sa mlekom</span><span class="dots"></span><span class="menu-price">190</span></div>
-            <div class="menu-row"><span class="menu-name">Cappuccino</span><span class="dots"></span><span class="menu-price">210</span></div>
-            <div class="menu-row"><span class="menu-name">Domaća kafa</span><span class="dots"></span><span class="menu-price">140</span></div>
+    <section class="menu-section">
+        <div class="container">
             
-            <h3 class="menu-category-title">🍺 Točeno Pivo</h3>
-            <div class="menu-row"><span class="menu-name">Salto Lager</span><span class="dots"></span><span class="menu-price">310</span></div>
-            <div class="menu-row"><span class="menu-name">Salto Stout</span><span class="dots"></span><span class="menu-price">390</span></div>
-            <div class="menu-row"><span class="menu-name">Dogma Hoptopod</span><span class="dots"></span><span class="menu-price">420</span></div>
-            <div class="menu-row"><span class="menu-name">HOG</span><span class="dots"></span><span class="menu-price">390</span></div>
+            <div class="menu-masonry">
 
-            <h3 class="menu-category-title">🍹 Sveže Ceđeno</h3>
-            <div class="menu-row"><span class="menu-name">Zeleni Miks</span><span class="dots"></span><span class="menu-price">390</span></div>
-            <div class="menu-row"><span class="menu-name">Limunada</span><span class="dots"></span><span class="menu-price">210</span></div>
-            
-            <p style="text-align:center; margin-top:2rem; opacity:0.6;">*Cene su izražene u RSD sa PDV-om.</p>
+                <div class="menu-category-card reveal">
+                    <h3 class="cat-title">Topli Napici <span class="cat-icon">☕</span></h3>
+                    
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Espresso</span><span class="item-dots"></span><span class="item-price">160</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Espresso doppio</span><span class="item-dots"></span><span class="item-price">280</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Espresso sa mlekom</span><span class="item-dots"></span><span class="item-price">190</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Cappuccino</span><span class="item-dots"></span><span class="item-price">210</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Latte macchiato</span><span class="item-dots"></span><span class="item-price">220</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Nescaffe</span><span class="item-dots"></span><span class="item-price">220</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Domaća kafa</span><span class="item-dots"></span><span class="item-price">140</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Topla čokolada</span><span class="item-dots"></span><span class="item-price">360</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Srpska kafa</span><span class="item-dots"></span><span class="item-price">310</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Irska kafa</span><span class="item-dots"></span><span class="item-price">380</span></div></div>
+                </div>
+
+                <div class="menu-category-card reveal">
+                    <h3 class="cat-title">Točeno Pivo <span class="cat-icon">🍺</span></h3>
+                    <p style="font-size:0.8rem; color:#666; margin-bottom:1rem;">Cene su za 0.5L / 0.25L</p>
+                    
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Salto Lager</span><span class="item-dots"></span><span class="item-price">310 / 210</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Salto Stout</span><span class="item-dots"></span><span class="item-price">390 / 290</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Salto Wit</span><span class="item-dots"></span><span class="item-price">340 / 240</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Salto Pale Ale</span><span class="item-dots"></span><span class="item-price">330 / 230</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Dogma Hoptopod</span><span class="item-dots"></span><span class="item-price">420 / 320</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">HOG Loki</span><span class="item-dots"></span><span class="item-price">370 / 270</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">HOG Mjolnir</span><span class="item-dots"></span><span class="item-price">390 / 290</span></div></div>
+                </div>
+
+                <div class="menu-category-card reveal">
+                    <h3 class="cat-title">Vitamini (0.3) <span class="cat-icon">🍊</span></h3>
+                    
+                    <div class="menu-item">
+                        <div class="item-header"><span class="item-name">Jutarnji miks</span><span class="item-dots"></span><span class="item-price">390</span></div>
+                        <div class="item-desc">jabuka, pomorandža, šargarepa</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header"><span class="item-name">Zeleni miks</span><span class="item-dots"></span><span class="item-price">390</span></div>
+                        <div class="item-desc">jabuka, kivi, limeta, nana</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header"><span class="item-name">Gvozdeni miks</span><span class="item-dots"></span><span class="item-price">410</span></div>
+                        <div class="item-desc">pomorandža, šargarepa, cvekla</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header"><span class="item-name">Tropski miks</span><span class="item-dots"></span><span class="item-price">420</span></div>
+                        <div class="item-desc">ananas, kivi, pomorandža</div>
+                    </div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Limunada</span><span class="item-dots"></span><span class="item-price">210</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Đumbir šot</span><span class="item-dots"></span><span class="item-price">120</span></div></div>
+                </div>
+
+                <div class="menu-category-card reveal">
+                    <h3 class="cat-title">Čajevi (210 RSD) <span class="cat-icon">🍵</span></h3>
+                    
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Granny / Little Camel</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Detoxicate me!</span></div></div>
+                    <div class="menu-item">
+                        <div class="item-header"><span class="item-name">Wild Madness</span></div>
+                        <div class="item-desc">nana, divlja jabuka, kopriva, šipak</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header"><span class="item-name">Glog it</span></div>
+                        <div class="item-desc">majčina dušica, rtanjski, kantarion, glog</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-header"><span class="item-name">Zdravko</span></div>
+                        <div class="item-desc">hibiskus, crni slez, neven, kamilica</div>
+                    </div>
+                </div>
+
+                <div class="menu-category-card reveal">
+                    <h3 class="cat-title">Šejkovi <span class="cat-icon">🥤</span></h3>
+                    
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Plazma</span><span class="item-dots"></span><span class="item-price">420</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Banana</span><span class="item-dots"></span><span class="item-price">410</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Protein</span><span class="item-dots"></span><span class="item-price">470</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Vegantein</span><span class="item-dots"></span><span class="item-price">490</span></div></div>
+                </div>
+
+                <div class="menu-category-card reveal">
+                    <h3 class="cat-title">Flaširano Pivo <span class="cat-icon">🍾</span></h3>
+                    
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Heineken 0.25</span><span class="item-dots"></span><span class="item-price">290</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Corona 0.33</span><span class="item-dots"></span><span class="item-price">390</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Svetionik 0.33</span><span class="item-dots"></span><span class="item-price">360</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">New Pils On The Block</span><span class="item-dots"></span><span class="item-price">340</span></div></div>
+                </div>
+
+                <div class="menu-category-card reveal">
+                    <h3 class="cat-title">Špriceri & Likeri <span class="cat-icon">🍹</span></h3>
+                    
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Aperol Spritz</span><span class="item-dots"></span><span class="item-price">510</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Hugo</span><span class="item-dots"></span><span class="item-price">520</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Gorki list</span><span class="item-dots"></span><span class="item-price">230</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Jagermeister</span><span class="item-dots"></span><span class="item-price">310</span></div></div>
+                </div>
+
+                <div class="menu-category-card reveal">
+                    <h3 class="cat-title">Žestina (0.04) <span class="cat-icon">🥃</span></h3>
+                    
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Absolut Vodka</span><span class="item-dots"></span><span class="item-price">310</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Havana 3 Rum</span><span class="item-dots"></span><span class="item-price">340</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Jack Daniel's</span><span class="item-dots"></span><span class="item-price">410</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Monkey 47 Gin</span><span class="item-dots"></span><span class="item-price">660</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Toplička suza (Rakija)</span><span class="item-dots"></span><span class="item-price">260</span></div></div>
+                </div>
+
+                <div class="menu-category-card reveal">
+                    <h3 class="cat-title">Sode & Voda <span class="cat-icon">💧</span></h3>
+                    
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Coca Cola / Pepsi</span><span class="item-dots"></span><span class="item-price">190</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Cockta</span><span class="item-dots"></span><span class="item-price">210</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Sokovi (Gusto)</span><span class="item-dots"></span><span class="item-price">180</span></div></div>
+                    <div class="menu-item"><div class="item-header"><span class="item-name">Knjaz Miloš 0.25</span><span class="item-dots"></span><span class="item-price">145</span></div></div>
+                </div>
+
+            </div>
+
+            <div class="reveal" style="text-align:center; margin-top:3rem; color:#666; font-size:0.9rem;">
+                <p>* Cene su izražene u RSD. Zadržavamo pravo izmene cena.</p>
+            </div>
+
         </div>
-    </div>
+    </section>
 
-   <footer id="kontakt">
+    <footer id="kontakt">
         <div class="footer-map">
             <iframe src="https://maps.google.com/maps?q=Spirit+kafe+bar+Zaplanjska+86a+Beograd&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
