@@ -52,8 +52,22 @@ ul { list-style: none; }
     color: rgba(255, 255, 255, 0.95); font-size: 0.95rem; text-transform: uppercase; 
     letter-spacing: 1px; font-weight: 500; text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
-.btn-menu-link { border: 1px solid rgba(255,255,255,0.4); padding: 6px 14px; border-radius: 50px; }
-.nav-cta { background-color: var(--accent-color); padding: 0.6rem 1.4rem; border-radius: 50px; color: white !important; }
+./* --- DUGME MENI U NAVIGACIJI --- */
+.btn-menu-link {
+    border: 1px solid rgba(255, 255, 255, 0.6); /* Svetli okvir */
+    padding: 6px 16px;
+    border-radius: 50px;
+    color: var(--text-light) !important; /* OBAVEZNO: Bela/Bež boja teksta */
+    font-weight: 600;
+    transition: 0.3s;
+    background: transparent; /* Providna pozadina u startu */
+}
+
+.btn-menu-link:hover {
+    background: var(--text-light); /* Bela pozadina na hover */
+    color: var(--primary-color) !important; /* Zeleni tekst na hover */
+    border-color: var(--text-light);
+}
 
 /* --- 3. HERO SEKCIJA --- */
 .hero, .page-header {
