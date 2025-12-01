@@ -11,15 +11,14 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-            <img src="logo-spirit.png" alt="Spirit Kafebar Logo" style="height: 50px; width: auto; vertical-align: middle;">
+                <img src="spiritlogo.svg" alt="Spirit Kafebar Logo" style="height: 50px; width: auto; vertical-align: middle;">
             </a>
             <button class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
-          <ul class="nav-links">
+            <ul class="nav-links">
                 <li><a href="index.html">Početna</a></li>
                 <li><a href="pivo.html">Pivo</a></li>
-                <li><a href="kafa.html" >Kafa</a></li>
-                <li><a href="igre.html" style="color:var(--accent-color)">Igre</a></li>
-                <li><a href="meni.html" class="btn-menu-link">📜 Meni</a></li>
+                <li><a href="kafa.html">Kafa</a></li>
+                <li><a href="igre.html" style="color:var(--accent-color)">Igre</a></li> <li><a href="meni.html" class="btn-menu-link">📜 Meni</a></li>
                 <li><a href="#kontakt" class="nav-cta">Rezerviši</a></li>
             </ul>
         </div>
@@ -27,37 +26,38 @@
 
     <header class="page-header" style="background-image: url('catan-boardgame.png');">
         <div class="overlay"></div>
-        <div class="container hero-content hidden">
+        <div class="container hero-content reveal">
             <h1>Ko gubi - časti turu!</h1>
             <p>Od strateškog nadmudrivanja do totalnog haosa.</p>
+            <a href="meni.html" class="btn btn-primary">Vidi Cene Pića</a>
         </div>
     </header>
 
     <section class="features">
         <div class="container">
-            <h2 class="section-title hidden">Naši Favoriti</h2>
+            <h2 class="section-title reveal">Naši Favoriti</h2>
             
-            <div class="zigzag-item hidden">
+            <div class="zigzag-item reveal">
                 <div class="zigzag-text">
                     <h3>Catan</h3>
-                    <p><strong>Strategija.</strong> Klasik koji je promenio svet igara. Sakupljaj resurse, gradi puteve i pazi se lopova! "Menjam drvo za ovcu" je rečenica koja ovde razara prijateljstva, ali stvara uspomene.</p>
+                    <p><strong>Strategija.</strong> Klasik koji je promenio svet igara. Sakupljaj resurse, gradi puteve i pazi se lopova! "Menjam drvo za ovcu" je rečenica koja ovde razara prijateljstva, ali stvara uspomene za ceo život.</p>
                 </div>
                 <div class="zigzag-image">
-                    <img src="catan-igra.png" alt="Catan">
+                    <img src="catan-igra.png" alt="Catan tabla">
                 </div>
             </div>
 
-            <div class="zigzag-item hidden">
+            <div class="zigzag-item reveal">
                 <div class="zigzag-text">
                     <h3>Exploding Kittens</h3>
-                    <p><strong>Party haos.</strong> Ruski rulet, ali sa mačkama. Visoko-energetska igra gde pokušavaš da ne eksplodiraš koristeći lasere, sendviče od mačje trave i demontiranje. Savršeno uz pivo.</p>
+                    <p><strong>Party haos.</strong> Ruski rulet, ali sa mačkama. Visoko-energetska igra gde pokušavaš da ne eksplodiraš koristeći lasere, sendviče od mačje trave i demontiranje. Savršeno uz pivo jer partije traju kratko.</p>
                 </div>
                 <div class="zigzag-image">
-                    <img src="exploding Kittens.png" alt="Exploding Kittens">
+                    <img src="exploding Kittens.png" alt="Exploding Kittens karte">
                 </div>
             </div>
 
-            <div class="zigzag-item hidden">
+            <div class="zigzag-item reveal">
                 <div class="zigzag-text">
                     <h3>Unstable Unicorns</h3>
                     <p><strong>Slatko ali opasno.</strong> Izgradi armiju jednoroga. Izdaj prijatelje. Jednorozi su sada tvoji prijatelji. Strateška igra koja uništava prijateljstva... na najslađi mogući način.</p>
@@ -69,7 +69,9 @@
         </div>
     </section>
 
-   <footer id="kontakt">
+   
+
+    <footer id="kontakt">
         <div class="footer-map">
             <iframe src="https://maps.google.com/maps?q=Spirit+kafe+bar+Zaplanjska+86a+Beograd&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
@@ -80,16 +82,18 @@
                 <div class="footer-col left-col">
                     <h4>Radno Vreme</h4>
                     <ul>
-                        <li><span>Pon - Ned</span> <strong>09:00 - 23:00</strong></li>
+                        <li><span>Pon-Ned</span> <strong>09:00 - 22:00</strong></li>
                     </ul>
                 </div>
 
                 <div class="footer-col center-col">
                     <div class="brand-card">
-                        <span class="footer-icon"><svg class="icon-svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-  <circle cx="12" cy="10" r="3"></circle>
-</svg></span>
+                        <span class="footer-icon">
+                            <svg class="icon-svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" style="width:40px; height:40px; stroke:var(--accent-color);">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </span>
                         <h3>Adresa</h3>
                         <p>Zaplanjska 86a<br>Beograd, Voždovac</p>
                         <a href="https://maps.google.com/?q=Zaplanjska+86a" target="_blank" class="btn-small">Pogledaj na mapi</a>
@@ -99,14 +103,20 @@
                 <div class="footer-col right-col">
                     <h4>Kontakt</h4>
                     <div class="contact-phones">
-                        <a href="tel:+381647000520" class="phone-btn"><svg class="icon-svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-</svg> 064 700 0520</a>
-                        <a href="https://instagram.com/spirit_kafebar" target="_blank" class="insta-btn"><svg class="icon-svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-</svg> Instagram</a>
+                        <a href="tel:+381647000520" class="phone-btn">
+                            <svg class="icon-svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg> 
+                            064 700 0520
+                        </a>
+                        <a href="https://instagram.com/spirit_kafebar" target="_blank" class="insta-btn">
+                            <svg class="icon-svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg> 
+                            Instagram
+                        </a>
                     </div>
                     <div class="quick-links">
                         <a href="meni.html">Meni</a> • <a href="pivo.html">Pivo</a> • <a href="kafa.html">Kafa</a>
@@ -119,7 +129,7 @@
                 <p>© 2025 Spirit Kafebar.</p>
             </div>
         </div>
-   </footer>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
