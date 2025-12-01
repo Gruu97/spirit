@@ -1,0 +1,37 @@
+<svg width="200" height="150" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .spirit-text { 
+      font-family: "Courier New", Courier, monospace; /* Slično originalu */
+      font-weight: bold; 
+      fill: #F5F5E9; /* Tvoja bež boja */
+    }
+    .sub-text {
+      font-family: "Courier New", Courier, monospace;
+      font-weight: normal;
+      fill: #F5F5E9;
+      letter-spacing: 2px;
+    }
+    .symbol {
+      fill: none;
+      stroke: #F5F5E9;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+
+  <path class="symbol" d="M100,20 
+               C110,10 120,5 125,15 
+               C130,25 120,40 100,50 
+               C80,60 70,50 75,40 
+               C80,30 110,35 120,60
+               M115,55 L130,45" />
+
+  <text x="50%" y="100" text-anchor="middle" class="spirit-text" font-size="42">
+    SPIRIT
+  </text>
+
+  <text x="50%" y="125" text-anchor="middle" class="sub-text" font-size="14">
+    KAFE BAR
+  </text>
+</svg>
