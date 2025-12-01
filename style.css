@@ -1035,3 +1035,34 @@ footer {
     stroke: var(--accent-color);
     opacity: 0.8;
 }
+/* --- OPTIMIZACIJA MAPE --- */
+.footer-map {
+    width: 100%;
+    height: 400px;
+    display: block;
+    border-bottom: 8px solid var(--primary-color);
+    background-color: #e0e0e0; /* Siva pozadina dok se mapa ne učita */
+    position: relative;
+}
+
+/* Opciono: Loading animacija dok se mapa ne pojavi */
+.footer-map::before {
+    content: "Učitavanje mape...";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #888;
+    font-size: 0.9rem;
+    z-index: 0;
+}
+
+.footer-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    filter: grayscale(10%) contrast(1.1);
+    position: relative;
+    z-index: 1; /* Mapa ide preko teksta "Učitavanje" */
+}
