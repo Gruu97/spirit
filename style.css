@@ -2,7 +2,7 @@
    1. DEFINICIJE I OSNOVA
 ========================================= */
 :root {
-    --primary-color: #2F5C63; /* Petrol Zelena */
+    --primary-color: #3e6d77; /* Petrol Zelena */
     --bg-body: #F2EBE0;       /* Topla Bež */
     --accent-color: #C87961;  /* Terakota */
     --text-dark: #1F2829;
@@ -895,7 +895,7 @@ footer {
 /* --- PROMENA: BELA POZADINA ZA RECENZIJE --- */
 .reviews-marquee {
     padding: 4rem 0; /* Malo više prostora */
-    background-color: #2F5C63; /* Čista bela boja */
+    background-color: #3e6d77; /* Čista bela boja */
     position: relative;
     /* Suptilna senka koja pada na sekciju ispod */
     box-shadow: 0 0 50px rgba(0,0,0,0.05); 
