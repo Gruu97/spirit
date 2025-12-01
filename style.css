@@ -1007,3 +1007,30 @@ footer {
     .review-card-scroll { width: 300px; padding: 1.5rem; }
     .marquee-track { gap: 1rem; }
 }
+/* --- STIL ZA SVG IKONICE --- */
+.icon-svg {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    stroke: currentColor; /* Uzima boju teksta oko sebe */
+    stroke-width: 2;
+    fill: none;
+    margin-right: 8px; /* Razmak od teksta */
+    display: inline-block;
+}
+
+/* Malo veća ikonica za centralnu karticu u footeru */
+.brand-card .icon-svg {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px;
+    stroke: var(--accent-color); /* Terakota boja */
+}
+
+/* Ikonice u naslovima (Meni) */
+.cat-title .icon-svg {
+    width: 28px;
+    height: 28px;
+    stroke: var(--accent-color);
+    opacity: 0.8;
+}
